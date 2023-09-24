@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "../Navbar/Navbar.scss";
 import Logo from "../../assets/logo.png";
 import { Link, NavLink } from "react-router-dom";
-import { HiBars3 } from "react-icons/hi2";
 import { FaBars } from "react-icons/fa";
 
 import { LiaTimesSolid } from "react-icons/lia";

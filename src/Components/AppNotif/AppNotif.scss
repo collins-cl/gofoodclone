@@ -1,0 +1,43 @@
+.container {
+  position: fixed;
+  height: 50px;
+  top: 0;
+  width: 100%;
+  background: rgb(245, 245, 245);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1em;
+
+  .left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    .icon {
+      fill: green;
+    }
+
+    p {
+      font-weight: 600;
+      font-size: 13px;
+    }
+  }
+
+  .right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    a {
+      height: 35px;
+      width: 7em;
+      border-radius: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 12px;
+      background-color: green;
+    }
+  }
+}
