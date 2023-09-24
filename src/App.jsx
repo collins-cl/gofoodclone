@@ -19,7 +19,7 @@ function App() {
     <>
       <Router>
         <div>
-          <AppNotif />
+          {isMobile && <AppNotif />}
           <Navbar />
           <p>dddd</p>
           <p>dddd</p>

@@ -3,9 +3,10 @@
   display: flex;
   align-items: center;
   padding: 0 2em;
-  position: fixed;
+  position: sticky;
   width: 100%;
-  top: 50px;
+  top: 0;
+  z-index: 1;
   background: white;
   border-bottom: 1px solid rgba(209, 207, 207, 0.361);
 
@@ -151,7 +152,6 @@
 @media screen and (max-width: 768px) {
   .navbar {
     padding: 0 0;
-    position: fixed;
     height: 60px;
 
     .wrapper {
