@@ -6,6 +6,7 @@ import AppNotif from "./Components/AppNotif/AppNotif";
 
 function App() {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [isHidden, setIsHidden] = useState(true);
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth <= 768);
@@ -19,7 +20,7 @@ function App() {
     <>
       <Router>
         <div>
-          {isMobile && <AppNotif />}
+          {isMobile && isHidden ? <AppNotif setIsHidden={setIsHidden} /> : null}
           <Navbar />
           <p>dddd</p>
           <p>dddd</p>

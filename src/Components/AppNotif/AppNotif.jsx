@@ -3,7 +3,7 @@ import "../AppNotif/AppNotif.scss";
 import { SiTarget } from "react-icons/si";
 import { LiaTimesSolid } from "react-icons/lia";
 
-const AppNotif = () => {
+const AppNotif = ({ setIsHidden }) => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   useEffect(() => {
@@ -25,7 +25,7 @@ const AppNotif = () => {
           Open app
         </a>
 
-        <LiaTimesSolid />
+        <LiaTimesSolid onClick={() => setIsHidden(false)} />
       </div>
     </div>
   );
