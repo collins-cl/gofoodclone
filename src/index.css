@@ -1,0 +1,21 @@
+@font-face {
+  font-family: "Poppins";
+  src: url("../src/Font/Poppins/Poppins-Regular.ttf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: "Poppins";
+}
+
+a {
+  color: black;
+}
