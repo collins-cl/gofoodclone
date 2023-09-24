@@ -3,7 +3,7 @@
   height: 50px;
   top: 0;
   width: 100%;
-  background: rgb(245, 245, 245);
+  background: rgb(250, 250, 250);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -12,10 +12,11 @@
   .left {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 15px;
 
     .icon {
       fill: green;
+      font-size: 19px;
     }
 
     p {
@@ -27,17 +28,19 @@
   .right {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 15px;
 
     a {
       height: 35px;
-      width: 7em;
+      width: 8em;
       border-radius: 20px;
       display: flex;
       justify-content: center;
       align-items: center;
       font-size: 12px;
       background-color: green;
+      color: white;
+      font-weight: bold;
     }
   }
 }

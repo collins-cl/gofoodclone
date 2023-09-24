@@ -8,7 +8,7 @@ const AppNotif = () => {
     <div className="container">
       <div className="left">
         <SiTarget className="icon"/>
-        <p>Switch to the app</p>
+        <p>Switch to the app ?</p>
       </div>
 
       <div className="right">
