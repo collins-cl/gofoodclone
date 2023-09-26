@@ -31,7 +31,7 @@ const Hero = () => {
     if (q === "") {
       return;
     } else {
-      return el.city.toLowerCase().includes(q);
+      return el.city.includes(q);
     }
   });
 
@@ -84,7 +84,7 @@ const Hero = () => {
           <div className="modal">
             <div className="wrap">
               {isMobile && open ? (
-                <Modal open={open} onClose={handleClose}>
+                <Modal open={open} onClose={handleClose} sx={{background: "rgba(85, 83, 83, 0.576)"}}> 
                   <div className="custom-modal">
                     <div className="custom-modal-header">
                       <p>Select your location</p>

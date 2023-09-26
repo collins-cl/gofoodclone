@@ -276,10 +276,14 @@
             }
 
             .tag {
+              font-size: 1.2em;
+              left: 12%;
+            }
+
+            .arrow {
               position: absolute;
-              font-size: 1.3em;
-              top: 0;
-              left: 20px;
+              right: 11%;
+              bottom: 25%;
             }
           }
 
@@ -289,12 +293,6 @@
             font-size: 16px;
           }
         }
-
-        // .modal-mobile {
-        //   .container {
-        //    background-color: red;
-        //   }
-        // }
 
         .location-list {
           position: fixed;

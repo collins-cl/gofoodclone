@@ -3,7 +3,7 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  height: 75%;
+  height: 80%;
   width: 100%;
   border-top-right-radius: 20px;
   border-top-left-radius: 20px;
@@ -41,11 +41,11 @@
   outline: none;
   border: 1px solid rgb(89, 89, 89);
   padding: 1em 3em;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .input input::placeholder {
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .input .tag {
@@ -53,7 +53,7 @@
   position: absolute;
   font-size: 1.4em;
   top: 0.6em;
-  left: 2em;
+  left: 1.8em;
 }
 
 .content {
@@ -65,9 +65,11 @@
   width: 100%;
   display: flex;
   align-items: center;
-  padding: 1em;
+  padding: 1.2em;
   gap: 1em;
   cursor: pointer;
+  border-top: 1px solid rgba(202, 202, 202, 0.318);
+  border-bottom: 1px solid rgba(202, 202, 202, 0.318);
 }
 
 .list-item:hover {
@@ -113,16 +115,26 @@
 }
 
 .geo-location {
-  padding: 1em;
+  padding: 1.2em 2em;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
   margin-top: 10px;
+  border-top: 1px solid rgba(202, 202, 202, 0.318);
+  border-bottom: 1px solid rgba(202, 202, 202, 0.318);
+}
 
-  border-top: 1px solid rgb(89, 89, 89);
-  border-bottom: 1px solid rgb(89, 89, 89);
+.geo-location p{
+    font-size: 15px;
+    font-weight: bold;
+    color: rgb(104, 103, 103);
+}
+
+.geo-location .icon{
+    font-size: 21px;
+    fill: green;
 }
 
 .geo-location:hover {
