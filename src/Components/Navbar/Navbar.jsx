@@ -29,11 +29,11 @@ const Navbar = () => {
             <LiaTimesSolid className="close-menu" onClick={closeNav} />
             <img src={Logo} alt="" />
 
-            <NavLink exact actvieClassName="active" to="/">
+            <NavLink exact activeClassName="active" to="/">
               Home
             </NavLink>
 
-            <NavLink exact actvieClassName="active" to="/recommendation">
+            <NavLink exact activeClassName="active" to="/recommendation">
               Recommendations
             </NavLink>
 
