@@ -14,7 +14,7 @@ const AppNotif = ({ setIsHidden }) => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
   return (
-    <div className="container">
+    <div className="app-notif">
       <div className="left">
         <SiTarget className="icon" />
         <p>Switch to the app ?</p>

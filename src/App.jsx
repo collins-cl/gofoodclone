@@ -3,6 +3,7 @@ import "./App.css";
 import Navbar from "./Components/Navbar/Navbar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import AppNotif from "./Components/AppNotif/AppNotif";
+import Home from "./Pages/Home/Home";
 
 function App() {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
@@ -19,74 +20,13 @@ function App() {
   return (
     <>
       <Router>
-        <div>
+        <div className="app">
           {isMobile && isHidden ? <AppNotif setIsHidden={setIsHidden} /> : null}
           <Navbar />
-          <p>dddd</p>
-          <p>dddd</p>
-          <p>dddd</p>
-          <p>dddd</p>
-          <p>dddd</p>
-          <p>dddd</p>
-          <p>dddd</p>
-          <p>dddd</p>
-          <p>dddd</p>
-          <p>dddd</p>
-          <p>dddd</p>
-          <p>dddd</p>
-          <p>dddd</p>
-          <p>dddd</p>
-          <p>dddd</p>
-          <p>dddd</p>
-          <p>dddd</p>
-          <p>dddd</p>
-          <p>dddd</p>
-          <p>dddd</p>
-          <p>dddd</p>
-          <p>dddd</p>
-          <p>dddd</p>
-          <p>dddd</p>
-          <p>dddd</p>
-          <p>dddd</p>
-          <p>dddd</p>
-          <p>dddd</p>
-          <p>dddd</p>
-          <p>dddd</p>
-          <p>dddd</p>
-          <p>dddd</p>
-          <p>dddd</p>
-          <p>dddd</p>
-          <p>dddd</p>
-          <p>dddd</p>
-          <p>dddd</p>
-          <p>dddd</p>
-          <p>dddd</p>
-          <p>dddd</p>
-          <p>dddd</p>
-          <p>dddd</p>
-          <p>dddd</p>
-          <p>dddd</p>
-          <p>dddd</p>
-          <p>dddd</p>
-          <p>dddd</p>
-          <p>dddd</p>
-          <p>dddd</p>
-          <p>dddd</p>
-          <p>dddd</p>
-          <p>dddd</p>
-          <p>dddd</p>
-          <p>dddd</p>
-          <p>dddd</p>
-          <p>dddd</p>
-          <p>dddd</p>
-          <p>dddd</p>
-          <p>dddd</p>
-          <p>dddd</p>
-          <p>dddd</p>
-          <p>dddd</p>
-          <p>dddd</p>
-          <p>dddd</p>
-          <p>dddd</p>
+
+          <Routes>
+            <Route path="/" exact element={<Home />} />
+          </Routes>
         </div>
       </Router>
     </>
