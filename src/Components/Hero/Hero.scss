@@ -82,16 +82,16 @@
 
           .tag {
             position: absolute;
-            font-size: 1.5em;
+            font-size: 1.4em;
             top: 0;
-            margin-top: 12px;
-            left: 15px;
+            margin-top: 13px;
+            left: 12%;
             fill: red;
           }
 
           .arrow {
             position: absolute;
-            right: 5%;
+            right: 12%;
             bottom: 25%;
             font-size: 1.5em;
             fill: green;
@@ -129,10 +129,8 @@
           flex-direction: column;
           justify-content: flex-start;
           padding: 10px 0;
-          display: none;
 
           .geo-location {
-            display: none;
             padding: 1em;
             width: 100%;
             display: flex;
@@ -295,25 +293,38 @@
         }
 
         .location-list {
-          position: fixed;
-          top: 0;
-          left: 0;
-          z-index: 1;
-          width: 100vw;
-          height: 100%;
+          display: none;
+        }
+      }
+    }
+  }
+}
 
-          .container {
-            position: absolute;
-            background-color: white;
-            width: 65%;
-            height: 350px;
-            margin-top: 1em;
-            box-shadow: -1px 6px 21px -2px rgba(0, 0, 0, 0.15);
-            overflow-y: scroll;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            padding: 10px 0;
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .hero {
+    .wrapper {
+      .location {
+        width: 70%;
+
+        form {
+          margin-top: 0.8em;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 100%;
+
+          .input {
+            position: relative;
+            width: 72%;
+
+            .tag {
+              left: 10%;
+            }
+          }
+
+          button {
+            width: 25%;
+            height: 48px;
           }
         }
       }

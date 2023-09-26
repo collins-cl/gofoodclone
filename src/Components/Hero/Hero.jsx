@@ -16,10 +16,16 @@ const Hero = () => {
   const navigate = useNavigate();
   const [q, setQ] = useState("");
   const [open, setOpen] = useState(false);
+  const [openlist, setOpenList] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   const handleClose = () => {
     setOpen(false);
+  };
+
+  const handleCloseList = (props) => {
+    setQ(props.city);
+    setOpenList(false);
   };
 
   const handleLocationdb = (props) => {
@@ -64,7 +70,7 @@ const Hero = () => {
 
         <div className="location">
           <p>Your Location</p>
-          <form>
+          <form onSubmit={handleSubmit}>
             <div className="input">
               <MdLocationOn className="tag" />
               <input
@@ -72,7 +78,10 @@ const Hero = () => {
                 name="location"
                 value={q}
                 onChange={(e) => setQ(e.target.value)}
-                onClick={() => setOpen(true)}
+                onClick={() => {
+                  setOpen(true);
+                  setOpenList(true);
+                }}
                 placeholder="Enter your location"
               />
               <MdKeyboardArrowDown className="arrow" />
@@ -81,10 +90,51 @@ const Hero = () => {
             <button type="submit">Explore</button>
           </form>
 
+          {openlist && (
+            <div className="location-list">
+              {q <= 0 ? null : (
+                <div className="container">
+                  {q.length <= 0 ? (
+                    <div className="geo-location">
+                      <p>Use your current location</p>
+                      <MdOutlineMyLocation className="icon" />
+                    </div>
+                  ) : (
+                    filteredData.map((data, id) => (
+                      <div
+                        className="list-item"
+                        key={id}
+                        onClick={() => {
+                          handleCloseList(data);
+                          setOpenList(false);
+                        }}
+                      >
+                        <MdLocationOn className="icon" />
+                        <div className="item">
+                          <div className="head">
+                            {data.state} {data.city}
+                          </div>
+                          <p>
+                            {data.street_number}, {data.state_abrev}{" "}
+                            {data.street},{data.city}, {data.state}
+                          </p>
+                        </div>
+                      </div>
+                    ))
+                  )}
+                </div>
+              )}
+            </div>
+          )}
+
           <div className="modal">
             <div className="wrap">
               {isMobile && open ? (
-                <Modal open={open} onClose={handleClose} sx={{background: "rgba(85, 83, 83, 0.576)"}}> 
+                <Modal
+                  open={open}
+                  onClose={handleClose}
+                  sx={{ background: "rgba(85, 83, 83, 0.576)" }}
+                >
                   <div className="custom-modal">
                     <div className="custom-modal-header">
                       <p>Select your location</p>
@@ -147,31 +197,3 @@ const Hero = () => {
 };
 
 export default Hero;
-
-{
-  /* {filteredData.length <= 0 ? (
-                  <div className="geo-location">
-                    <p>Use your current location</p>
-                    <MdOutlineMyLocation className="icon" />
-                  </div>
-                ) : (
-                  filteredData.map((data, id) => (
-                    <div
-                      className="list-item"
-                      key={id}
-                      onClick={() => handleLocationdb(data)}
-                    >
-                      <MdLocationOn className="icon" />
-                      <div className="item">
-                        <div className="head">
-                          {data.state} {data.city}
-                        </div>
-                        <p>
-                          {data.street_number}, {data.state_abrev} {data.street}
-                          ,{data.city}, {data.state}
-                        </p>
-                      </div>
-                    </div>
-                  ))
-                )} */
-}
