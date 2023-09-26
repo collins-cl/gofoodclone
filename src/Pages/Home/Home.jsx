@@ -43,35 +43,6 @@ const Home = () => {
       <p>dddd</p>
       <p>dddd</p>
       <p>dddd</p>
-      <p>dddd</p>
-      <p>dddd</p>
-      <p>dddd</p>
-      <p>dddd</p>
-      <p>dddd</p>
-      <p>dddd</p>
-      <p>dddd</p>
-      <p>dddd</p>
-      <p>dddd</p>
-      <p>dddd</p>
-      <p>dddd</p>
-      <p>dddd</p>
-      <p>dddd</p>
-      <p>dddd</p>
-      <p>dddd</p>
-      <p>dddd</p>
-      <p>dddd</p>
-      <p>dddd</p>
-      <p>dddd</p>
-      <p>dddd</p>
-      <p>dddd</p>
-      <p>dddd</p>
-      <p>dddd</p>
-      <p>dddd</p>
-      <p>dddd</p>
-      <p>dddd</p>
-      <p>dddd</p>
-      <p>dddd</p>
-      <p>dddd</p>
     </div>
   );
 };
