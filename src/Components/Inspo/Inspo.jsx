@@ -4,7 +4,6 @@ import { NavLink } from "react-router-dom";
 import { InspoRoutes } from "../DummyFiles/InspoRoutes";
 
 const Inspo = () => {
-  const [route, setRoute] = useState(InspoRoutes);
   return (
     <div className="inspo">
       <div className="wrapper">

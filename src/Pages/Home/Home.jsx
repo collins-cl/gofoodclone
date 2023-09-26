@@ -1,6 +1,6 @@
 import React from "react";
 import Hero from "../../Components/Hero/Hero";
-import Inspo from "../../Components/inspo/Inspo";
+import Inspo from "../../Components/Inspo/Inspo";
 
 const Home = () => {
   return (
