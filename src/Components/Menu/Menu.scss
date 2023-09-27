@@ -121,5 +121,110 @@
         }
       }
     }
+
+    .show-more {
+      text-align: center;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 600;
+      width: 13em;
+      margin: auto;
+      margin-top: 3em;
+      padding: 10px 1em;
+      border-radius: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: none;
+      background-color: rgba(48, 141, 48, 0.168);
+
+      a {
+        color: green;
+      }
+
+      &:hover {
+        transition: 0.3s background-color;
+        background-color: rgba(48, 141, 48, 0.288);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .menu {
+    margin-top: 5em;
+
+    .wrapper {
+      max-width: 95%;
+      margin: auto;
+      .head {
+        text-align: left;
+        font-size: 1.2em;
+      }
+
+      .info {
+        text-align: left;
+        width: 100%;
+        font-size: 14px;
+        margin-top: 0.7em;
+      }
+
+      .container {
+        width: 100%;
+        margin: auto;
+        margin-top: 3em;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1em;
+        .content {
+          width: 100%;
+          height: fit-content;
+          display: flex;
+          position: relative;
+          padding: 5px;
+
+          .img {
+            width: 140px;
+            height: 180px;
+            position: relative;
+            img {
+              width: 140px;
+              height: 180px;
+            }
+
+            .star {
+              position: absolute;
+              bottom: 9%;
+              right: 30%;
+            }
+          }
+
+          .sect-two {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+          }
+
+          .dist-price {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 65%;
+            margin-top: 0.8em;
+          }
+        }
+      }
+
+      .show-more {
+        text-align: center;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 600;
+        width: 100%;
+        margin: auto;
+        margin-top: 2em;
+      }
+    }
   }
 }
