@@ -4,6 +4,7 @@ import Inspo from "../../Components/Inspo/Inspo";
 import Cuisine from "../../Components/Cuisines/Cuisine";
 import Menu from "../../Components/Menu/Menu";
 import WhyUs from "../../Components/WhyUs/WhyUs";
+import CityList from "../../Components/CityList/CityList";
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <Cuisine />
       <Menu />
       <WhyUs />
+      <CityList />
       <p>dddd</p>
       <p>dddd</p>
       <p>dddd</p>
