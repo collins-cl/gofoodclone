@@ -12,19 +12,21 @@ const Cuisine = () => {
       <div className="wrapper">
         <div className="head">Choose from cuisines</div>
 
-        <div className="container">
-          {CuisineRoute &&
-            CuisineRoute.slice(0, itemstoshow).map((data, id) => (
-              <NavLink to={`/restaurant/${data.route}`} key={id}>
-                <div className="content">
-                  <div className="image">
-                    <img src={data.img} alt="" />
-                  </div>
+        <div className="box">
+          <div className="container">
+            {CuisineRoute &&
+              CuisineRoute.slice(0, itemstoshow).map((data, id) => (
+                <NavLink to={`/restaurant/${data.route}`} key={id}>
+                  <div className="content">
+                    <div className="image">
+                      <img src={data.img} alt="" />
+                    </div>
 
-                  <p>{data.title}</p>
-                </div>
-              </NavLink>
-            ))}
+                    <p>{data.title}</p>
+                  </div>
+                </NavLink>
+              ))}
+          </div>
         </div>
 
         {itemstoshow < totalItems && (

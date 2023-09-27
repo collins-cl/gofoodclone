@@ -1,0 +1,125 @@
+.menu {
+  margin-top: 7em;
+
+  .wrapper {
+    .head {
+      text-align: center;
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    .info {
+      text-align: center;
+      width: 38%;
+      margin: auto;
+      margin-top: 1em;
+    }
+
+    .container {
+      width: 90%;
+      margin: auto;
+      margin-top: 3em;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1em;
+      .content {
+        width: 290px;
+        height: 390px;
+        border-radius: 15px;
+        padding: 8px;
+        margin: auto;
+        position: relative;
+        cursor: pointer;
+        border: 1px solid lightgray;
+
+        &:hover {
+          transition: box-shadow 0.5s;
+
+          box-shadow: -1px 6px 21px -2px rgba(0, 0, 0, 0.15);
+        }
+
+        .img {
+          position: relative;
+          img {
+            border-radius: 10px;
+            border: none;
+          }
+
+          .star {
+            position: absolute;
+            bottom: 9%;
+            right: 5%;
+            width: 3.8em;
+            height: 1.6em;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 5px 8px;
+            border-radius: 15px;
+            background-color: white;
+
+            .icon {
+              fill: rgb(240, 171, 41);
+            }
+
+            p {
+              font-size: 14px;
+              font-weight: bold;
+            }
+          }
+        }
+
+        .title {
+          font-size: 15px;
+          font-weight: bold;
+        }
+
+        .type {
+          font-size: 13px;
+          margin-top: 0.8em;
+        }
+
+        .dist-price {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 55%;
+          margin-top: 0.8em;
+
+          .distance {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+
+            .icon {
+              fill: red;
+            }
+
+            p {
+              font-weight: 500;
+              font-weight: bold;
+            }
+          }
+
+          .dot {
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background-color: black;
+          }
+
+          .price {
+            display: flex;
+            align-items: center;
+
+            .icon {
+              font-size: 14px;
+              fill: rgb(59, 58, 58);
+            }
+          }
+        }
+      }
+    }
+  }
+}
