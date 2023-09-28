@@ -4,6 +4,7 @@ import Navbar from "./Components/Navbar/Navbar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import AppNotif from "./Components/AppNotif/AppNotif";
 import Home from "./Pages/Home/Home";
+import Footer from "./Components/Footer/Footer";
 
 function App() {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
@@ -27,6 +28,8 @@ function App() {
           <Routes>
             <Route path="/" exact element={<Home />} />
           </Routes>
+
+          <Footer/>
         </div>
       </Router>
     </>

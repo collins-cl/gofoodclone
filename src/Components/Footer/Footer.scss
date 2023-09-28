@@ -1,0 +1,317 @@
+.footer {
+  margin-top: 5em;
+  background-color: rgb(229, 37, 53);
+
+  .wrapper {
+    width: 78%;
+    margin: auto;
+    padding: 5em 0;
+    display: flex;
+    justify-content: space-between;
+
+    .container1 {
+      width: 65%;
+      color: white;
+      .head {
+        img {
+          width: 140px;
+        }
+      }
+
+      .desc {
+        font-size: 1.5em;
+        letter-spacing: 1px;
+        margin-top: 0.5em;
+        font-weight: bold;
+        width: 95%;
+      }
+
+      .info {
+        margin-top: 1em;
+        font-size: 16px;
+        font-weight: 100;
+      }
+
+      .download {
+        margin-top: 2em;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1em;
+        width: 60%;
+
+        a {
+          img {
+            width: 200px;
+            height: 60px;
+          }
+        }
+      }
+
+      .lang-select {
+        position: relative;
+        margin-top: 3em;
+        width: 45%;
+
+        .langlist {
+          position: absolute;
+          top: -8em;
+          color: black;
+          background-color: #fff;
+          width: 100%;
+          height: 115px;
+          border-radius: 5px;
+
+          .sect {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+          }
+
+          .content {
+            margin: 0;
+            width: 100%;
+            padding: 1em;
+            cursor: pointer;
+            &:hover {
+              background-color: lightgray;
+            }
+          }
+        }
+        .lang {
+          width: 100%;
+          height: 45px;
+          color: black;
+          background-color: white;
+          display: flex;
+          align-items: center;
+          border-radius: 30px;
+          padding: 0 3em;
+          font-weight: lighter;
+          font-size: 15px;
+          cursor: pointer;
+        }
+
+        .icon1,
+        .icon2 {
+          position: absolute;
+        }
+
+        .icon1 {
+          fill: red;
+          bottom: 30%;
+          left: 2.5%;
+          font-weight: bold;
+        }
+
+        .icon2 {
+          right: 5%;
+          bottom: 30%;
+          fill: black;
+        }
+      }
+
+      .t-o-s {
+        display: flex;
+        align-items: center;
+        gap: 2.5em;
+        margin-top: 2em;
+
+        a {
+          color: #fff;
+          font-size: 13px;
+          font-weight: bold;
+
+          &:nth-child(3) {
+            display: flex;
+            align-items: center;
+            gap: 1em;
+
+            .icon {
+              font-size: 2em;
+            }
+          }
+        }
+      }
+
+      .copyright {
+        font-size: 14px;
+        font-weight: lighter;
+        margin-top: 1em;
+        width: 95%;
+      }
+    }
+
+    .container2 {
+      margin-top: 2em;
+      .img-cont {
+        position: relative;
+
+        .img1,
+        .img2 {
+          width: 220px;
+          height: 450px;
+        }
+
+        .img1 {
+          position: absolute;
+          left: -7em;
+          bottom: -4em;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer {
+    .wrapper {
+      width: 90%;
+      margin: auto;
+      padding: 2em 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .container1 {
+        width: 100%;
+        color: white;
+        .head {
+          img {
+            width: 120px;
+          }
+        }
+
+        .desc {
+          font-size: 1.2em;
+          letter-spacing: 1px;
+          margin-top: 0.5em;
+          font-weight: bold;
+          width: 95%;
+        }
+
+        .info {
+          margin-top: 1em;
+          font-size: 16px;
+          font-weight: 100;
+        }
+
+        .download {
+          margin-top: 2em;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 10px;
+          width: 70%;
+
+          a {
+            img {
+              width: 100%;
+              height: 40px;
+            }
+          }
+        }
+
+        .lang-select {
+          position: relative;
+          margin-top: 3em;
+          width: 100%;
+
+          .langlist {
+            position: absolute;
+            top: -8em;
+            color: black;
+            background-color: #fff;
+            width: 100%;
+            height: 115px;
+            border-radius: 5px;
+
+            .sect {
+              display: flex;
+              justify-content: space-between;
+              flex-direction: column;
+            }
+
+            .content {
+              margin: 0;
+              width: 100%;
+              padding: 1em;
+              cursor: pointer;
+              &:hover {
+                background-color: lightgray;
+              }
+            }
+          }
+          .lang {
+            width: 100%;
+            height: 45px;
+            color: black;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            border-radius: 30px;
+            padding: 0 3em;
+            font-weight: lighter;
+            font-size: 15px;
+            cursor: pointer;
+          }
+
+          .icon1,
+          .icon2 {
+            position: absolute;
+          }
+
+          .icon1 {
+            fill: red;
+            bottom: 30%;
+            left: 2.5%;
+            font-weight: bold;
+          }
+
+          .icon2 {
+            right: 5%;
+            bottom: 30%;
+            fill: black;
+          }
+        }
+
+        .t-o-s {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          gap: 3em;
+          margin-top: 2em;
+          width: 80%;
+        }
+
+        .copyright {
+          font-size: 14px;
+          font-weight: lighter;
+          margin-top: 2em;
+          width: 100%;
+        }
+      }
+
+      .container2 {
+        display: none;
+        margin-top: 2em;
+        .img-cont {
+          position: relative;
+
+          .img1,
+          .img2 {
+            width: 220px;
+            height: 450px;
+          }
+
+          .img1 {
+            position: absolute;
+            left: -7em;
+            bottom: -4em;
+          }
+        }
+      }
+    }
+  }
+}

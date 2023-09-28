@@ -15,36 +15,6 @@ const Home = () => {
       <Menu />
       <WhyUs />
       <CityList />
-      <p>dddd</p>
-      <p>dddd</p>
-      <p>dddd</p>
-      <p>dddd</p>
-      <p>dddd</p>
-      <p>dddd</p>
-      <p>dddd</p>
-      <p>dddd</p>
-      <p>dddd</p>
-      <p>dddd</p>
-      <p>dddd</p>
-      <p>dddd</p>
-      <p>dddd</p>
-      <p>dddd</p>
-      <p>dddd</p>
-      <p>dddd</p>
-      <p>dddd</p>
-      <p>dddd</p>
-      <p>dddd</p>
-      <p>dddd</p>
-      <p>dddd</p>
-      <p>dddd</p>
-      <p>dddd</p>
-      <p>dddd</p>
-      <p>dddd</p>
-      <p>dddd</p>
-      <p>dddd</p>
-      <p>dddd</p>
-      <p>dddd</p>
-      <p>dddd</p>
     </div>
   );
 };
