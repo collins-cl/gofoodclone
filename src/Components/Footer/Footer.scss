@@ -286,8 +286,6 @@
         }
 
         .copyright {
-          font-size: 14px;
-          font-weight: lighter;
           margin-top: 2em;
           width: 100%;
         }
@@ -295,20 +293,77 @@
 
       .container2 {
         display: none;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .footer {
+    margin-top: 5em;
+    background-color: rgb(229, 37, 53);
+
+    .wrapper {
+      width: 90%;
+      margin: auto;
+      padding: 5em 0;
+      display: flex;
+      justify-content: space-between;
+
+      .container1 {
+        width: 60%;
+
+        .desc {
+          font-size: 1.2em;
+        }
+
+        .info {
+          font-size: 15px;
+        }
+
+        .download {
+          width: 60%;
+
+          a {
+            img {
+              width: 170px;
+              height: 60px;
+            }
+          }
+        }
+
+        .lang-select {
+          position: relative;
+          margin-top: 2em;
+          width: 45%;
+
+          .icon1 {
+            left: 8%;
+            font-weight: bold;
+          }
+
+          .icon2 {
+            right: 10%;
+          }
+        }
+
+        .copyright {
+          font-size: 14px;
+          font-weight: lighter;
+          margin-top: 1em;
+          width: 95%;
+        }
+      }
+
+      .container2 {
         margin-top: 2em;
         .img-cont {
           position: relative;
 
           .img1,
           .img2 {
-            width: 220px;
-            height: 450px;
-          }
-
-          .img1 {
-            position: absolute;
-            left: -7em;
-            bottom: -4em;
+            width: 200px;
+            height: 380px;
           }
         }
       }
