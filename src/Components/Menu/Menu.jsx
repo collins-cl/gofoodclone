@@ -5,8 +5,10 @@ import { FaLocationDot } from "react-icons/fa6";
 import { BsCurrencyDollar } from "react-icons/bs";
 import { MenuRoute } from "../DummyFiles/MenuRoute";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Menu = () => {
+  const navigate = useNavigate();
   function calculateColor(props) {
     if (props >= 1 && props < 2) {
       return "black";
@@ -33,7 +35,11 @@ const Menu = () => {
         <div className="container">
           {MenuRoute &&
             MenuRoute.slice(0, 8).map((item, id) => (
-              <div className="content" key={id}>
+              <div
+                className="content"
+                key={id}
+                onClick={() => navigate(`/restaurants/near-me/${item.type}`)}
+              >
                 <div className="img">
                   <img
                     src={`https://picsum.photos/id/${item.image}/270/230`}

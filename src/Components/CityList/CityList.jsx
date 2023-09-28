@@ -43,7 +43,12 @@ const CityList = () => {
               ))}
         </div>
 
-        <div className="show-more">Show all cities</div>
+        <div
+          className="show-more"
+          onClick={() => navigate("/restaurants/list")}
+        >
+          Show all cities
+        </div>
       </div>
     </div>
   );

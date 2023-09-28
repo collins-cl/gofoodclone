@@ -1,5 +1,5 @@
 import React from "react";
-import "../WhyUs/Whyus.scss";
+import "./Whyus.scss";
 import One from "../../assets/whyorderus/first.png";
 import second from "../../assets/whyorderus/second.png";
 import third from "../../assets/whyorderus/third.png";
