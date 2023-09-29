@@ -28,13 +28,13 @@
   padding: 10px 0;
 }
 
-.input {
+.modal-content .input {
   width: 100%;
   padding: 0 20px;
   position: relative;
 }
 
-.input input {
+.modal-content .input input {
   width: 100%;
   height: 50px;
   border-radius: 30px;
@@ -126,15 +126,15 @@
   border-bottom: 1px solid rgba(202, 202, 202, 0.318);
 }
 
-.geo-location p{
-    font-size: 15px;
-    font-weight: bold;
-    color: rgb(104, 103, 103);
+.geo-location p {
+  font-size: 15px;
+  font-weight: bold;
+  color: rgb(104, 103, 103);
 }
 
-.geo-location .icon{
-    font-size: 21px;
-    fill: green;
+.geo-location .icon {
+  font-size: 21px;
+  fill: green;
 }
 
 .geo-location:hover {

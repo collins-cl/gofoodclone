@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import "./Navbar.scss";
 import Logo from "../../assets/logo.png";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
 
 import { LiaTimesSolid } from "react-icons/lia";
 import { BsSearch, BsFillCartFill } from "react-icons/bs";
 
 const Navbar = () => {
+  const location = useLocation();
+
   const [open, setOpen] = useState(false);
 
   const openNav = () => setOpen(true);
@@ -45,9 +47,11 @@ const Navbar = () => {
         </div>
 
         <div className="right-float">
-          <Link to="" className="search">
-            <BsSearch className="icon" />
-          </Link>
+          {location.pathname === "/search" ? null : (
+            <Link to="/search" className="search">
+              <BsSearch className="icon" />
+            </Link>
+          )}
 
           <div className="log-in">
             <Link>Log In</Link>
