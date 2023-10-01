@@ -185,7 +185,7 @@
           border: 1px solid rgba(211, 211, 211, 0.37);
 
           .img {
-            width: 140px;
+            width: 160px;
             height: 150px;
             position: relative;
             img {
@@ -196,7 +196,87 @@
             .star {
               position: absolute;
               bottom: 9%;
-              right: 30%;
+              right: 25%;
+            }
+          }
+
+          .sect-two {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+          }
+
+          .dist-price {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 65%;
+            margin-top: 0.8em;
+          }
+        }
+      }
+
+      .show-more {
+        text-align: center;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 600;
+        width: 100%;
+        margin: auto;
+        margin-top: 2em;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .menu {
+    margin-top: 5em;
+
+    .wrapper {
+      max-width: 95%;
+      margin: auto;
+      .head {
+        text-align: left;
+        font-size: 1.2em;
+      }
+
+      .info {
+        text-align: left;
+        width: 100%;
+        font-size: 14px;
+        margin-top: 0.7em;
+      }
+
+      .container {
+        width: 100%;
+        margin: auto;
+        margin-top: 3em;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1em;
+        .content {
+          width: 48%;
+          height: fit-content;
+          display: flex;
+          position: relative;
+          padding: 5px;
+          border: 1px solid rgba(211, 211, 211, 0.37);
+
+          .img {
+            width: 160px;
+            height: 150px;
+            position: relative;
+            img {
+              width: 100%;
+              height: 100%;
+            }
+
+            .star {
+              position: absolute;
+              bottom: 9%;
+              right: 25%;
             }
           }
 
