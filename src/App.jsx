@@ -6,6 +6,7 @@ import AppNotif from "./Components/AppNotif/AppNotif";
 import Home from "./Pages/Home/Home";
 import Footer from "./Components/Footer/Footer";
 import Search from "./Pages/Search/Search";
+import Recommendation from "./Pages/Recommendations/Recommendation";
 
 function App() {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
@@ -28,7 +29,8 @@ function App() {
 
           <Routes>
             <Route path="/" exact element={<Home />} />
-            <Route path="/search" exact element={<Search />} />
+            <Route path="/search" element={<Search />} />
+            <Route path="/recommendation" element={<Recommendation />} />
           </Routes>
 
           <Footer />

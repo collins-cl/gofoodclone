@@ -65,13 +65,16 @@
         margin: auto;
         margin-top: 2em;
         justify-content: space-between;
-        gap: 1em;
+        align-items: start;
+        gap: 0;
+
         a {
           text-align: center;
-          width: 120px;
+          width: 100px;
+          margin-top: 1em;
           .container {
-            width: 120px;
-            height: 120px;
+            width: 100px;
+            height: 100px;
             display: flex;
             justify-content: center;
             align-items: center;

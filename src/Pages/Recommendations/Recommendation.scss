@@ -1,0 +1,370 @@
+.recommendation {
+  .wrapper {
+    .hero {
+      width: 97%;
+      margin: auto;
+      margin-top: 0.7em;
+      background: url("../../assets/recommend.jpg");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 360px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      position: relative;
+
+      .box {
+        margin-left: 7%;
+
+        h4 {
+          font-size: 2.1em;
+        }
+
+        p {
+          font-size: 15px;
+        }
+      }
+    }
+
+    .container {
+      width: 90%;
+      margin: auto;
+      margin-top: 2em;
+
+      .routing {
+        font-size: 13px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        a {
+          &:hover {
+            color: green;
+          }
+        }
+      }
+
+      .near-me {
+        margin-top: 3em;
+        margin-bottom: 7em;
+
+        .img {
+          display: flex;
+          align-items: center;
+          gap: 0.7em;
+
+          p {
+            font-size: 1.3em;
+            font-weight: bold;
+          }
+        }
+
+        .content-wrapper {
+          width: 100%;
+          margin: auto;
+          margin-top: 3em;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 1em;
+          .content {
+            width: 280px;
+            height: 370px;
+            border-radius: 15px;
+            padding: 8px;
+            margin: auto;
+            position: relative;
+            cursor: pointer;
+            border: 1px solid lightgray;
+
+            &:hover {
+              transition: box-shadow 0.5s;
+
+              box-shadow: -1px 6px 21px -2px rgba(0, 0, 0, 0.15);
+            }
+
+            .img {
+              position: relative;
+              img {
+                border-radius: 10px;
+                border: none;
+              }
+
+              .star {
+                position: absolute;
+                bottom: 8%;
+                right: 5%;
+                width: 3.8em;
+                height: 1.6em;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 5px 8px;
+                border-radius: 15px;
+                background-color: white;
+
+                .icon {
+                  fill: rgb(240, 171, 41);
+                }
+
+                p {
+                  font-size: 14px;
+                  font-weight: bold;
+                }
+              }
+            }
+
+            .title {
+              font-size: 15px;
+              font-weight: bold;
+            }
+
+            .type {
+              font-size: 13px;
+              margin-top: 0.8em;
+            }
+
+            .dist-price {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              width: 55%;
+              margin-top: 0.8em;
+
+              .distance {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                font-size: 14px;
+
+                .icon {
+                  fill: red;
+                }
+
+                p {
+                  font-weight: 500;
+                  font-weight: bold;
+                }
+              }
+
+              .dot {
+                width: 4px;
+                height: 4px;
+                border-radius: 50%;
+                background-color: black;
+              }
+
+              .price {
+                display: flex;
+                align-items: center;
+
+                .icon {
+                  font-size: 14px;
+                  fill: rgb(59, 58, 58);
+                }
+              }
+            }
+          }
+        }
+
+        .show-all {
+          text-align: center;
+          cursor: pointer;
+          font-size: 14px;
+          font-weight: 600;
+          width: 13em;
+          margin: auto;
+          margin-top: 3em;
+          padding: 10px 1em;
+          border-radius: 30px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border: none;
+          background-color: rgba(48, 141, 48, 0.168);
+
+          a {
+            color: green;
+          }
+
+          &:hover {
+            transition: 0.3s background-color;
+            background-color: rgba(48, 141, 48, 0.288);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .recommendation {
+    .wrapper {
+      .hero {
+        width: 97%;
+        margin: auto;
+        margin-top: 0.7em;
+        height: 320px;
+
+        .box {
+          margin-left: 7%;
+          width: 80%;
+
+          h4 {
+            font-size: 1.6em;
+          }
+
+          p {
+            font-size: 14px;
+          }
+        }
+      }
+
+      .container {
+        width: 95%;
+        margin: auto;
+        margin-top: 2em;
+
+        .near-me {
+          margin-top: 3em;
+          margin-bottom: 7em;
+
+          .img {
+            gap: 0.4em;
+
+            img {
+              width: 70px;
+            }
+
+            p {
+              font-size: 1.2em;
+            }
+          }
+
+          .content-wrapper {
+            width: 100%;
+            margin: auto;
+            margin-top: 1.5em;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1em;
+            .content {
+              width: 100%;
+              height: 170px;
+              border: 1px solid rgba(221, 221, 221, 0.345);
+              display: flex;
+              align-items: flex-start;
+              gap: 0.5em;
+
+              .img {
+                position: relative;
+                height: 100%;
+                width: 50%;
+                img {
+                  height: 100%;
+                  width: 100%;
+                }
+
+                .star {
+                  position: absolute;
+                  bottom: 7%;
+                  right: 25%;
+                }
+              }
+
+              .sect-two {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .recommendation {
+    .wrapper {
+      .hero {
+        width: 97%;
+        margin: auto;
+        margin-top: 0.7em;
+        height: 320px;
+
+        .box {
+          margin-left: 7%;
+          width: 80%;
+
+          h4 {
+            font-size: 1.6em;
+          }
+
+          p {
+            font-size: 14px;
+          }
+        }
+      }
+
+      .container {
+        width: 95%;
+        margin: auto;
+        margin-top: 2em;
+
+        .near-me {
+          margin-top: 3em;
+          margin-bottom: 7em;
+
+          .img {
+            gap: 0.4em;
+
+            img {
+              width: 70px;
+            }
+
+            p {
+              font-size: 1.2em;
+            }
+          }
+
+          .content-wrapper {
+            width: 100%;
+            margin: auto;
+            margin-top: 1.5em;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1em;
+            .content {
+              width: 48%;
+              height: 170px;
+              border: 1px solid rgba(221, 221, 221, 0.345);
+              display: flex;
+              align-items: flex-start;
+              gap: 0.5em;
+
+              .img {
+                position: relative;
+                height: 100%;
+                width: 50%;
+                img {
+                  height: 100%;
+                  width: 100%;
+                }
+
+                .star {
+                  position: absolute;
+                  bottom: 7%;
+                  right: 25%;
+                }
+              }
+
+              .sect-two {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

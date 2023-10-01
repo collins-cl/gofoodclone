@@ -93,7 +93,8 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      width: 15%;
+      width: fit-content;
+      gap: 2em;
 
       .icon {
         fill: green;
@@ -139,10 +140,54 @@
         align-items: center;
         border-radius: 50%;
         transition: background-color 0.1s;
-        cursor: pointer;
+        position: relative;
+
+        .icon {
+          cursor: pointer;
+        }
 
         &:hover {
           background-color: rgba(71, 169, 71, 0.242);
+        }
+
+        .cart-bucket-desktop {
+          position: absolute;
+          top: 0;
+          margin-top: 3.5em;
+          right: 0;
+          width: 400px;
+          height: 400px;
+          border-radius: 10px;
+          background-color: white;
+          padding: 1.5em;
+
+          .isempty {
+            .head {
+              font-size: 1.1em;
+              font-weight: bold;
+            }
+
+            .content {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              margin-top: 35%;
+
+              .icon {
+                font-size: 1.6em;
+                fill: rgb(235, 6, 6);
+              }
+
+              p {
+                margin-top: 2em;
+                text-align: center;
+                font-size: 14px;
+                width: 80%;
+                color: rgb(76, 75, 75);
+              }
+            }
+          }
         }
       }
     }
@@ -241,10 +286,50 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        width: 25%;
 
         .log-in {
           display: none;
+        }
+
+        .cart-bucket-desktop {
+          display: none;
+          position: absolute;
+          top: 0;
+          margin-top: 3.5em;
+          right: 0;
+          width: 400px;
+          height: 400px;
+          border-radius: 10px;
+          background-color: white;
+          padding: 1.5em;
+
+          .isempty {
+            .head {
+              font-size: 1.1em;
+              font-weight: bold;
+            }
+
+            .content {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              margin-top: 35%;
+
+              .icon {
+                font-size: 1.6em;
+                fill: rgb(235, 6, 6);
+              }
+
+              p {
+                margin-top: 2em;
+                text-align: center;
+                font-size: 14px;
+                width: 80%;
+                color: rgb(76, 75, 75);
+              }
+            }
+          }
         }
       }
     }
@@ -287,7 +372,6 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        width: 25%;
       }
     }
   }
