@@ -14,6 +14,7 @@
       margin-top: 2.5em;
       display: flex;
       flex-wrap: wrap;
+      justify-content: space-between;
       align-items: center;
       gap: 1.5em;
       a {
@@ -52,7 +53,7 @@
     margin-top: 8em;
 
     .wrapper {
-      width: 95%;
+      width: 97%;
       margin: auto;
 
       .head {
@@ -65,22 +66,68 @@
         margin: auto;
         margin-top: 2em;
         justify-content: space-between;
-        align-items: start;
+        align-items: flex-start;
+        padding: 5px;
         gap: 0;
 
         a {
           text-align: center;
-          width: 100px;
+          width: 120px;
           margin-top: 1em;
           .container {
-            width: 100px;
-            height: 100px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            border-radius: 15px;
-            border: 1px solid rgba(211, 210, 210, 0.715);
+            width: 120px;
+            height: 120px;
+
+            img {
+              width: 70px;
+            }
+
+            p {
+              display: none;
+            }
+          }
+          .bottom-title {
+            font-size: 13px;
+            width: 80%;
+            margin: auto;
+            margin-top: 8px;
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .inspo {
+    margin-top: 8em;
+
+    .wrapper {
+      width: 97%;
+      margin: auto;
+
+      .head {
+        font-size: 1.2em;
+        text-align: left;
+      }
+
+      .box {
+        max-width: 100%;
+        margin: auto;
+        margin-top: 2em;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 5px;
+        gap: 0;
+
+        a {
+          text-align: center;
+          width: 120px;
+          margin-top: 1em;
+          .container {
+            width: 120px;
+            height: 120px;
 
             img {
               width: 70px;
