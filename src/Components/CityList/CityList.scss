@@ -66,3 +66,21 @@
     }
   }
 }
+
+@media screen and (max-width: 390px) {
+  .list_of_cities {
+    margin-top: 7em;
+
+    .wrapper {
+      .container {
+        width: 90%;
+      }
+
+      .show-more {
+        width: 90%;
+        margin: auto;
+        margin-top: 3em;
+      }
+    }
+  }
+}

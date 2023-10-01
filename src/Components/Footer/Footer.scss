@@ -1,6 +1,6 @@
 .footer {
   margin-top: 5em;
-  background-color: rgb(239, 48, 64);
+  background-color: rgb(235, 30, 47);
 
   .wrapper {
     width: 78%;
@@ -183,7 +183,7 @@
         }
 
         .desc {
-          font-size: 1.2em;
+          font-size: 1em;
           letter-spacing: 1px;
           margin-top: 0.5em;
           font-weight: bold;
@@ -192,7 +192,7 @@
 
         .info {
           margin-top: 1em;
-          font-size: 16px;
+          font-size: 12px;
           font-weight: 100;
         }
 
@@ -264,12 +264,12 @@
           .icon1 {
             fill: red;
             bottom: 30%;
-            left: 2.5%;
+            left: 5%;
             font-weight: bold;
           }
 
           .icon2 {
-            right: 5%;
+            right: 6%;
             bottom: 30%;
             fill: black;
           }
@@ -288,6 +288,7 @@
         .copyright {
           margin-top: 2em;
           width: 100%;
+          font-size: 13px;
         }
       }
 
