@@ -327,7 +327,7 @@ const Recommendation = () => {
 
             <div className="content-wrapper">
               {MenuRoute &&
-                MenuRoute.slice(25, 28).map((item, id) => (
+                MenuRoute.slice(26, 30).map((item, id) => (
                   <div
                     className="content"
                     key={id}
@@ -382,7 +382,7 @@ const Recommendation = () => {
 
             <div className="content-wrapper">
               {MenuRoute &&
-                MenuRoute.slice(30, 34).map((item, id) => (
+                MenuRoute.slice(13, 17).map((item, id) => (
                   <div
                     className="content"
                     key={id}

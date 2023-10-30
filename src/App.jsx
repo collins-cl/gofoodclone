@@ -7,6 +7,7 @@ import Home from "./Pages/Home/Home";
 import Footer from "./Components/Footer/Footer";
 import Search from "./Pages/Search/Search";
 import Recommendation from "./Pages/Recommendations/Recommendation";
+import SearchedData from "./Pages/Search/SearchedData/SearchedData";
 
 function App() {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
@@ -29,8 +30,9 @@ function App() {
 
           <Routes>
             <Route path="/" exact element={<Home />} />
-            <Route path="/search" element={<Search />} />
-            <Route path="/recommendation" element={<Recommendation />} />
+            <Route path="/search" element={<Search />}></Route>
+            <Route path="/search-result" element={<SearchedData />} />
+            <Route path="/recommendation" element={<Recommendation />}></Route>
           </Routes>
 
           <Footer />

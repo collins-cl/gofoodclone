@@ -2,17 +2,20 @@ import React, { useState, useEffect, useRef } from "react";
 import "./Navbar.scss";
 import Logo from "../../assets/logo.png";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { FaBars } from "react-icons/fa";
+import { FaBars, FaPlus } from "react-icons/fa";
 
 import { LiaTimesSolid } from "react-icons/lia";
 import { BsSearch, BsFillCartFill } from "react-icons/bs";
 
 const Navbar = () => {
   const location = useLocation();
+  const hiddenPaths = [ "/search",
+  "/search-result"]
   const ref = useRef();
 
   const [open, setOpen] = useState(false);
   const [isopen, setIsOpen] = useState(false);
+  const [isempty, setIsEmpty] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   const openNav = () => setOpen(true);
@@ -78,11 +81,13 @@ const Navbar = () => {
         </div>
 
         <div className="right-float">
-          {location.pathname === "/search" ? null : (
-            <Link to="/search" className="search">
-              <BsSearch className="icon" />
-            </Link>
-          )}
+          {
+            (hiddenPaths.includes(location.pathname) ? null : (
+              <Link to="/search" className="search">
+                <BsSearch className="icon" />
+              </Link>
+            ))
+          }
 
           <div className="log-in">
             <Link>Log In</Link>
@@ -93,17 +98,36 @@ const Navbar = () => {
             {!isMobile ? (
               isopen ? (
                 <div className="cart-bucket-desktop" ref={ref}>
-                  <div className="isempty">
-                    <div className="head">Your order</div>
+                  {isempty ? (
+                    <div className="isempty">
+                      <div className="head">Your order</div>
 
-                    <div className="content">
-                      <BsFillCartFill className="icon" />
-                      <p>
-                        Your cart is empty. Let's discover our collections of
-                        popular dishes.
-                      </p>
+                      <div className="content">
+                        <BsFillCartFill className="icon" />
+                        <p>
+                          Your cart is empty. Let's discover our collections of
+                          popular dishes.
+                        </p>
+                      </div>
                     </div>
-                  </div>
+                  ) : (
+                    <div className="notempty">
+                      <div className="head">
+                        <div className="left">
+                          <h4>Your order</h4>
+                          <p>McDonald's, Senayan Trade Center</p>
+                        </div>
+
+                        <div
+                          className="add-more-btn"
+                          onClick={() => setIsOpen(false)}
+                        >
+                          <FaPlus className="icon" />
+                          Add more
+                        </div>
+                      </div>
+                    </div>
+                  )}
                 </div>
               ) : null
             ) : (

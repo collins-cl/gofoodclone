@@ -22,7 +22,7 @@ const CityList = () => {
         <div className="container">
           {isMobile
             ? LocationDb &&
-              LocationDb.slice(0, 12).map((item, id) => (
+              LocationDb.slice(0, 10).map((item, id) => (
                 <div
                   className="city"
                   key={id}
@@ -32,7 +32,7 @@ const CityList = () => {
                 </div>
               ))
             : LocationDb &&
-              LocationDb.slice(0, 30).map((item, id) => (
+              LocationDb.slice(0, 18).map((item, id) => (
                 <div
                   className="city"
                   key={id}

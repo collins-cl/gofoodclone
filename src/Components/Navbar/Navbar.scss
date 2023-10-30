@@ -188,6 +188,34 @@
               }
             }
           }
+
+          .notempty{
+            .head{
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+
+              .left{
+                p{
+                  font-size: 12px;
+                }
+              }
+
+              .add-more-btn{
+                display: flex;
+                align-items: center;
+                gap: 10px; 
+                font-size: 14px;
+                border: 1px solid green;
+                padding: 5px .6em;
+                border-radius: 20px;
+                cursor: pointer;
+                .icon{
+                  font-size: 12px;
+                }
+              }
+            }
+          }
         }
       }
     }
