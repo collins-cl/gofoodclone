@@ -7,6 +7,7 @@ import { MenuRoute } from "../DummyFiles/MenuRoute";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { DataFiles } from "../DummyFiles/DataFiles";
+import { Skeleton } from "@mui/material";
 
 const Menu = () => {
   const navigate = useNavigate();
@@ -44,7 +45,11 @@ const Menu = () => {
                 }
               >
                 <div className="img">
-                  <img src={item.image} alt="" />
+                  {item ? (
+                    <img src={item.image} alt="" />
+                  ) : (
+                    <Skeleton variant="rectangular" width="270px" height="230px" />
+                  )}
                   <div className="star">
                     <FaStar className="icon" />
                     <p>{item.randomValue2}</p>
