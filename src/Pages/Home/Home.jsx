@@ -5,12 +5,10 @@ import Cuisine from "../../Components/Cuisines/Cuisine";
 import Menu from "../../Components/Menu/Menu";
 import WhyUs from "../../Components/WhyUs/WhyUs";
 import CityList from "../../Components/CityList/CityList";
-import { ReactTitle } from "react-meta-tags";
 
 const Home = () => {
   return (
     <div>
-      <ReactTitle title="GoFood" />
       <Hero />
       <Inspo />
       <Cuisine />

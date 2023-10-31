@@ -4,7 +4,6 @@ import { BsSearch } from "react-icons/bs";
 import { LiaTimesSolid } from "react-icons/lia";
 import { MenuRoute } from "../../Components/DummyFiles/MenuRoute";
 import { useNavigate, useSearchParams } from "react-router-dom";
-import { ReactTitle } from "react-meta-tags";
 
 
 const Search = () => {
@@ -67,7 +66,6 @@ const Search = () => {
 
   return (
     <div className="search-page">
-      <ReactTitle title="Search" />
       <div className="wrapper">
         <div className="input">
           <BsSearch className="search-icon" />

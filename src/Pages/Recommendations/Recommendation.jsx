@@ -11,14 +11,12 @@ import Budget from "../../assets/InspoPng/budget.png";
 import { FaStar } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { BsCurrencyDollar } from "react-icons/bs";
-import { ReactTitle } from "react-meta-tags";
 import { DataFiles } from "../../Components/DummyFiles/DataFiles";
 
 const Recommendation = () => {
   const navigate = useNavigate();
   return (
     <div className="recommendation">
-      <ReactTitle title="Recommendations" />
       <div className="wrapper">
         <div className="hero">
           <div className="box">
