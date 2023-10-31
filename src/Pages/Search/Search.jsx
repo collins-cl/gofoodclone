@@ -4,10 +4,10 @@ import { BsSearch } from "react-icons/bs";
 import { LiaTimesSolid } from "react-icons/lia";
 import { MenuRoute } from "../../Components/DummyFiles/MenuRoute";
 import { useNavigate, useSearchParams } from "react-router-dom";
-
+import { DataFiles } from "../../Components/DummyFiles/DataFiles";
 
 const Search = () => {
-  const menu = MenuRoute;
+  const menu = DataFiles;
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams({ q: "" });
   const [storedSearches, setHistory] = useState();
@@ -37,11 +37,13 @@ const Search = () => {
         console.log("empty");
       } else {
         const filteredMenu = menu.filter((el) => {
-          return el.type.toLowerCase().includes(q.toLowerCase());
+          return el.foodCategory.toLowerCase().includes(q.toLowerCase());
         });
 
         if (filteredMenu.length > 0) {
-          const query = filteredMenu[0].type.split(" ")[0].toLowerCase();
+          const query = filteredMenu[0].foodCategory
+            .split(" ")[0]
+            .toLowerCase();
           if (query === q.toLowerCase()) {
             if (storedSearches) {
               // If there's an existing search history, add the new query to it
@@ -55,10 +57,10 @@ const Search = () => {
 
             navigate(`/search-result?q=${query}`);
           } else {
-            console.log("no");
+            navigate("/404");
           }
         } else {
-          console.log("no matching items in the menu");
+          navigate("/404");
         }
       }
     }

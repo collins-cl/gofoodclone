@@ -3,9 +3,10 @@ import "../SearchedData/SearchedData.scss";
 import { useParams, useSearchParams } from "react-router-dom";
 import { MenuRoute } from "../../../Components/DummyFiles/MenuRoute";
 import Image from "../../../../public/CuisinePng/bako.jpg";
+import { DataFiles } from "../../../Components/DummyFiles/DataFiles";
 
 const SearchedData = () => {
-  const menu = MenuRoute;
+  const menu = DataFiles;
   const [searchParams, setSearchParams] = useSearchParams("");
   const [data, setData] = useState([]);
 
@@ -13,7 +14,7 @@ const SearchedData = () => {
 
   useEffect(() => {
     const filteredItems = menu.filter((item) => {
-      return item.type.split(" ")[0].toLowerCase() === param.toLowerCase();
+      return item.foodCategory.split(" ")[0].toLowerCase() === param.toLowerCase();
     });
 
     setData(filteredItems);
@@ -34,19 +35,19 @@ const SearchedData = () => {
               <div className="box" key={item.id}>
                 <div className="img">
                   <img
-                    src={`https://picsum.photos/id/${item.image}/230/200`}
+                    src={item.image}
                     alt=""
                   />
                 </div>
 
                 <div className="name">
-                  <p>{item.name}</p>
+                  <p>{item.foodName}</p>
                 </div>
 
                 <div className="details">
-                  <div className="type">{item.type}</div>
+                  <div className="type">{item.foodCategory}</div>
 
-                  <div className="price">{item.price}$</div>
+                  <div className="price">{item.price} USD</div>
                 </div>
 
                 <div className="add">Add to cart</div>
