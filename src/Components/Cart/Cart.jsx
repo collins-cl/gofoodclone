@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import "../Cart/Cart.scss";
-import { BsSearch, BsFillCartFill } from "react-icons/bs";
-import { FaBars, FaPlus } from "react-icons/fa";
+import { BsFillCartFill } from "react-icons/bs";
+import { FaPlus } from "react-icons/fa";
 import { Modal } from "@mui/material";
 
 const Cart = () => {
@@ -33,6 +33,7 @@ const Cart = () => {
   return (
     <div className="cart">
       <BsFillCartFill className="icon" onClick={() => setIsOpen(true)} />
+      <div className="cart-count">3</div>
       {!isMobile ? (
         isopen ? (
           <div className="cart-bucket-desktop" ref={ref}>
