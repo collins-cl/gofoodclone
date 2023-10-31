@@ -6,6 +6,7 @@ import { BsCurrencyDollar } from "react-icons/bs";
 import { MenuRoute } from "../DummyFiles/MenuRoute";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { DataFiles } from "../DummyFiles/DataFiles";
 
 const Menu = () => {
   const navigate = useNavigate();
@@ -33,33 +34,32 @@ const Menu = () => {
         </div>
 
         <div className="container">
-          {MenuRoute &&
-            MenuRoute.slice(0, 8).map((item, id) => (
+          {DataFiles &&
+            DataFiles.slice(0, 8).map((item, id) => (
               <div
                 className="content"
                 key={id}
-                onClick={() => navigate(`/restaurants/near-me/${item.type}`)}
+                onClick={() =>
+                  navigate(`/restaurants/near-me/${item.foodCategory}`)
+                }
               >
                 <div className="img">
-                  <img
-                    src={`https://picsum.photos/id/${item.image}/270/230`}
-                    alt=""
-                  />
+                  <img src={item.image} alt="" />
                   <div className="star">
                     <FaStar className="icon" />
-                    <p>{item.rating}</p>
+                    <p>{item.randomValue2}</p>
                   </div>
                 </div>
 
                 <div className="sect-two">
-                  <div className="title">{item.name}</div>
+                  <div className="title">{item.foodName}</div>
 
-                  <div className="type">{item.type}</div>
+                  <div className="type">{item.foodCategory}</div>
 
                   <div className="dist-price">
                     <div className="distance">
                       <FaLocationDot className="icon" />
-                      <p>{item.distance}km</p>
+                      <p>{item.randomValue1}km</p>
                     </div>
 
                     <div className="dot"></div>

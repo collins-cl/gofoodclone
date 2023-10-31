@@ -1,6 +1,6 @@
 import React from "react";
 import "../Recommendations/Recommendation.scss";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Nearme from "../../../public/InspoPng/nearme.png";
 import Bestsellers from "../../../public/InspoPng/bestsellers.png";
 import Healthy from "../../../public/InspoPng/healthy.png";
@@ -8,13 +8,14 @@ import MostL from "../../../public/InspoPng/mostloved.png";
 import Promo from "../../../public/InspoPng/promo.png";
 import Sunshine from "../../assets/InspoPng/sunshine.png";
 import Budget from "../../assets/InspoPng/budget.png";
-import { MenuRoute } from "../../Components/DummyFiles/MenuRoute";
 import { FaStar } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { BsCurrencyDollar } from "react-icons/bs";
 import { ReactTitle } from "react-meta-tags";
+import { DataFiles } from "../../Components/DummyFiles/DataFiles";
 
 const Recommendation = () => {
+  const navigate = useNavigate();
   return (
     <div className="recommendation">
       <ReactTitle title="Recommendations" />
@@ -42,35 +43,32 @@ const Recommendation = () => {
             </div>
 
             <div className="content-wrapper">
-              {MenuRoute &&
-                MenuRoute.slice(5, 9).map((item, id) => (
+              {DataFiles &&
+                DataFiles.slice(5, 9).map((item, id) => (
                   <div
                     className="content"
                     key={id}
                     onClick={() =>
-                      navigate(`/restaurants/bestsellers/${item.type}`)
+                      navigate(`/restaurants/bestsellers/${item.foodCategory}`)
                     }
                   >
                     <div className="img">
-                      <img
-                        src={`https://picsum.photos/id/${item.image}/260/230`}
-                        alt=""
-                      />
+                      <img src={item.image} alt="" />
                       <div className="star">
                         <FaStar className="icon" />
-                        <p>{item.rating}</p>
+                        <p>{item.randomValue2}</p>
                       </div>
                     </div>
 
                     <div className="sect-two">
-                      <div className="title">{item.name}</div>
+                      <div className="title">{item.foodName}</div>
 
-                      <div className="type">{item.type}</div>
+                      <div className="type">{item.foodCategory}</div>
 
                       <div className="dist-price">
                         <div className="distance">
                           <FaLocationDot className="icon" />
-                          <p>{item.distance}km</p>
+                          <p>{item.randomValue1}km</p>
                         </div>
 
                         <div className="dot"></div>
@@ -99,35 +97,32 @@ const Recommendation = () => {
             </div>
 
             <div className="content-wrapper">
-              {MenuRoute &&
-                MenuRoute.slice(0, 4).map((item, id) => (
+              {DataFiles &&
+                DataFiles.slice(0, 4).map((item, id) => (
                   <div
                     className="content"
                     key={id}
                     onClick={() =>
-                      navigate(`/restaurants/near-me/${item.type}`)
+                      navigate(`/restaurants/near-me/${item.foodCategory}`)
                     }
                   >
                     <div className="img">
-                      <img
-                        src={`https://picsum.photos/id/${item.image}/260/230`}
-                        alt=""
-                      />
+                      <img src={item.image} alt="" />
                       <div className="star">
                         <FaStar className="icon" />
-                        <p>{item.rating}</p>
+                        <p>{item.randomValue2}</p>
                       </div>
                     </div>
 
                     <div className="sect-two">
-                      <div className="title">{item.name}</div>
+                      <div className="title">{item.foodName}</div>
 
-                      <div className="type">{item.type}</div>
+                      <div className="type">{item.foodCategory}</div>
 
                       <div className="dist-price">
                         <div className="distance">
                           <FaLocationDot className="icon" />
-                          <p>{item.distance}km</p>
+                          <p>{item.randomValue1}km</p>
                         </div>
 
                         <div className="dot"></div>
@@ -156,35 +151,32 @@ const Recommendation = () => {
             </div>
 
             <div className="content-wrapper">
-              {MenuRoute &&
-                MenuRoute.slice(10, 14).map((item, id) => (
+              {DataFiles &&
+                DataFiles.slice(10, 14).map((item, id) => (
                   <div
                     className="content"
                     key={id}
                     onClick={() =>
-                      navigate(`/restaurants/near-me/${item.type}`)
+                      navigate(`/restaurants/near-me/${item.foodCategory}`)
                     }
                   >
                     <div className="img">
-                      <img
-                        src={`https://picsum.photos/id/${item.image}/260/230`}
-                        alt=""
-                      />
+                      <img src={item.image} alt="" />
                       <div className="star">
                         <FaStar className="icon" />
-                        <p>{item.rating}</p>
+                        <p>{item.randomValue2}</p>
                       </div>
                     </div>
 
                     <div className="sect-two">
-                      <div className="title">{item.name}</div>
+                      <div className="title">{item.foodName}</div>
 
-                      <div className="type">{item.type}</div>
+                      <div className="type">{item.foodCategory}</div>
 
                       <div className="dist-price">
                         <div className="distance">
                           <FaLocationDot className="icon" />
-                          <p>{item.distance}km</p>
+                          <p>{item.randomValue1}km</p>
                         </div>
 
                         <div className="dot"></div>
@@ -213,35 +205,32 @@ const Recommendation = () => {
             </div>
 
             <div className="content-wrapper">
-              {MenuRoute &&
-                MenuRoute.slice(15, 19).map((item, id) => (
+              {DataFiles &&
+                DataFiles.slice(15, 19).map((item, id) => (
                   <div
                     className="content"
                     key={id}
                     onClick={() =>
-                      navigate(`/restaurants/mostloved/${item.type}`)
+                      navigate(`/restaurants/mostloved/${item.foodCategory}`)
                     }
                   >
                     <div className="img">
-                      <img
-                        src={`https://picsum.photos/id/${item.image}/260/230`}
-                        alt=""
-                      />
+                      <img src={item.image} alt="" />
                       <div className="star">
                         <FaStar className="icon" />
-                        <p>{item.rating}</p>
+                        <p>{item.randomValue2}</p>
                       </div>
                     </div>
 
                     <div className="sect-two">
-                      <div className="title">{item.name}</div>
+                      <div className="title">{item.foodName}</div>
 
-                      <div className="type">{item.type}</div>
+                      <div className="type">{item.foodCategory}</div>
 
                       <div className="dist-price">
                         <div className="distance">
                           <FaLocationDot className="icon" />
-                          <p>{item.distance}km</p>
+                          <p>{item.randomValue1}km</p>
                         </div>
 
                         <div className="dot"></div>
@@ -270,35 +259,32 @@ const Recommendation = () => {
             </div>
 
             <div className="content-wrapper">
-              {MenuRoute &&
-                MenuRoute.slice(20, 24).map((item, id) => (
+              {DataFiles &&
+                DataFiles.slice(20, 24).map((item, id) => (
                   <div
                     className="content"
                     key={id}
                     onClick={() =>
-                      navigate(`/restaurants/24hours/${item.type}`)
+                      navigate(`/restaurants/24hours/${item.foodCategory}`)
                     }
                   >
                     <div className="img">
-                      <img
-                        src={`https://picsum.photos/id/${item.image}/260/230`}
-                        alt=""
-                      />
+                      <img src={item.image} alt="" />
                       <div className="star">
                         <FaStar className="icon" />
-                        <p>{item.rating}</p>
+                        <p>{item.randomValue2}</p>
                       </div>
                     </div>
 
                     <div className="sect-two">
-                      <div className="title">{item.name}</div>
+                      <div className="title">{item.foodName}</div>
 
-                      <div className="type">{item.type}</div>
+                      <div className="type">{item.foodCategory}</div>
 
                       <div className="dist-price">
                         <div className="distance">
                           <FaLocationDot className="icon" />
-                          <p>{item.distance}km</p>
+                          <p>{item.randomValue1}km</p>
                         </div>
 
                         <div className="dot"></div>
@@ -327,33 +313,32 @@ const Recommendation = () => {
             </div>
 
             <div className="content-wrapper">
-              {MenuRoute &&
-                MenuRoute.slice(26, 30).map((item, id) => (
+              {DataFiles &&
+                DataFiles.slice(26, 30).map((item, id) => (
                   <div
                     className="content"
                     key={id}
-                    onClick={() => navigate(`/restaurants/promo/${item.type}`)}
+                    onClick={() =>
+                      navigate(`/restaurants/promo/${item.foodCategory}`)
+                    }
                   >
                     <div className="img">
-                      <img
-                        src={`https://picsum.photos/id/${item.image}/260/230`}
-                        alt=""
-                      />
+                      <img src={item.image} alt="" />
                       <div className="star">
                         <FaStar className="icon" />
-                        <p>{item.rating}</p>
+                        <p>{item.randomValue2}</p>
                       </div>
                     </div>
 
                     <div className="sect-two">
-                      <div className="title">{item.name}</div>
+                      <div className="title">{item.foodName}</div>
 
-                      <div className="type">{item.type}</div>
+                      <div className="type">{item.foodCategory}</div>
 
                       <div className="dist-price">
                         <div className="distance">
                           <FaLocationDot className="icon" />
-                          <p>{item.distance}km</p>
+                          <p>{item.randomValue2}km</p>
                         </div>
 
                         <div className="dot"></div>
@@ -382,35 +367,32 @@ const Recommendation = () => {
             </div>
 
             <div className="content-wrapper">
-              {MenuRoute &&
-                MenuRoute.slice(13, 17).map((item, id) => (
+              {DataFiles &&
+                DataFiles.slice(13, 17).map((item, id) => (
                   <div
                     className="content"
                     key={id}
                     onClick={() =>
-                      navigate(`/restaurants/near-me/${item.type}`)
+                      navigate(`/restaurants/near-me/${item.foodCategory}`)
                     }
                   >
                     <div className="img">
-                      <img
-                        src={`https://picsum.photos/id/${item.image}/260/230`}
-                        alt=""
-                      />
+                      <img src={item.image} alt="" />
                       <div className="star">
                         <FaStar className="icon" />
-                        <p>{item.rating}</p>
+                        <p>{item.randomValue2}</p>
                       </div>
                     </div>
 
                     <div className="sect-two">
-                      <div className="title">{item.name}</div>
+                      <div className="title">{item.foodName}</div>
 
-                      <div className="type">{item.type}</div>
+                      <div className="type">{item.foodCategory}</div>
 
                       <div className="dist-price">
                         <div className="distance">
                           <FaLocationDot className="icon" />
-                          <p>{item.distance}km</p>
+                          <p>{item.randomValue2}km</p>
                         </div>
 
                         <div className="dot"></div>

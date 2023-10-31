@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../CityList/CityList.scss";
 import { LocationDb } from "../DummyFiles/Locationdb";
 import { useNavigate } from "react-router-dom";
+import { DataFiles } from "../DummyFiles/DataFiles";
 
 const CityList = () => {
   const navigate = useNavigate();
@@ -21,24 +22,24 @@ const CityList = () => {
 
         <div className="container">
           {isMobile
-            ? LocationDb &&
-              LocationDb.slice(0, 10).map((item, id) => (
+            ? DataFiles &&
+              DataFiles.slice(0, 10).map((item, id) => (
                 <div
                   className="city"
                   key={id}
-                  onClick={() => navigate(`/restaurants/${item.city}`)}
+                  onClick={() => navigate(`/restaurants/${item.location}`)}
                 >
-                  {item.city}
+                  {item.location}
                 </div>
               ))
-            : LocationDb &&
-              LocationDb.slice(0, 18).map((item, id) => (
+            : DataFiles &&
+              DataFiles.slice(0, 18).map((item, id) => (
                 <div
                   className="city"
                   key={id}
-                  onClick={() => navigate(`/restaurants/${item.city}`)}
+                  onClick={() => navigate(`/restaurants/${item.location}`)}
                 >
-                  {item.city}
+                  {item.location}
                 </div>
               ))}
         </div>

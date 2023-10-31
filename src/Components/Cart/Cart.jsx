@@ -29,7 +29,6 @@ const Cart = () => {
       window.removeEventListener("resize", handleResize);
     };
   });
-  
 
   return (
     <div className="cart">
