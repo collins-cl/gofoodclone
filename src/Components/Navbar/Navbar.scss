@@ -132,92 +132,7 @@
         }
       }
 
-      .cart {
-        height: 35px;
-        width: 35px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 50%;
-        transition: background-color 0.1s;
-        position: relative;
-
-        .icon {
-          cursor: pointer;
-        }
-
-        &:hover {
-          background-color: rgba(71, 169, 71, 0.242);
-        }
-
-        .cart-bucket-desktop {
-          position: absolute;
-          top: 0;
-          margin-top: 3.5em;
-          right: 0;
-          width: 400px;
-          height: 400px;
-          border-radius: 10px;
-          background-color: white;
-          padding: 1.5em;
-
-          .isempty {
-            .head {
-              font-size: 1.1em;
-              font-weight: bold;
-            }
-
-            .content {
-              display: flex;
-              flex-direction: column;
-              justify-content: center;
-              align-items: center;
-              margin-top: 35%;
-
-              .icon {
-                font-size: 1.6em;
-                fill: rgb(235, 6, 6);
-              }
-
-              p {
-                margin-top: 2em;
-                text-align: center;
-                font-size: 14px;
-                width: 80%;
-                color: rgb(76, 75, 75);
-              }
-            }
-          }
-
-          .notempty{
-            .head{
-              display: flex;
-              align-items: center;
-              justify-content: space-between;
-
-              .left{
-                p{
-                  font-size: 12px;
-                }
-              }
-
-              .add-more-btn{
-                display: flex;
-                align-items: center;
-                gap: 10px; 
-                font-size: 14px;
-                border: 1px solid green;
-                padding: 5px .6em;
-                border-radius: 20px;
-                cursor: pointer;
-                .icon{
-                  font-size: 12px;
-                }
-              }
-            }
-          }
-        }
-      }
+    
     }
   }
 }
@@ -317,47 +232,6 @@
 
         .log-in {
           display: none;
-        }
-
-        .cart-bucket-desktop {
-          display: none;
-          position: absolute;
-          top: 0;
-          margin-top: 3.5em;
-          right: 0;
-          width: 400px;
-          height: 400px;
-          border-radius: 10px;
-          background-color: white;
-          padding: 1.5em;
-
-          .isempty {
-            .head {
-              font-size: 1.1em;
-              font-weight: bold;
-            }
-
-            .content {
-              display: flex;
-              flex-direction: column;
-              justify-content: center;
-              align-items: center;
-              margin-top: 35%;
-
-              .icon {
-                font-size: 1.6em;
-                fill: rgb(235, 6, 6);
-              }
-
-              p {
-                margin-top: 2em;
-                text-align: center;
-                font-size: 14px;
-                width: 80%;
-                color: rgb(76, 75, 75);
-              }
-            }
-          }
         }
       }
     }

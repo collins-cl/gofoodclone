@@ -13,18 +13,18 @@ const Search = () => {
 
   const q = searchParams.get("q");
 
-  const removeItem = (props) => {
-    if (storedSearches) {
-      // Define the item you want to remove (for example, based on its index)
-      const itemToRemove = props; // Change this to the index of the item you want to remove
-      const updatedSearches = storedSearches.filter(
-        (item) => item.id !== itemToRemove
-      );
-      localStorage.setItem("q", JSON.stringify(updatedSearches));
-    } else {
-      console.log("No search history found in localStorage");
-    }
-  };
+  // const removeItem = (props) => {
+  //   if (storedSearches) {
+  //     // Define the item you want to remove (for example, based on its index)
+  //     const itemToRemove = props; // Change this to the index of the item you want to remove
+  //     const updatedSearches = storedSearches.filter(
+  //       (item) => item.id !== itemToRemove
+  //     );
+  //     localStorage.setItem("q", JSON.stringify(updatedSearches));
+  //   } else {
+  //     console.log("No search history found in localStorage");
+  //   }
+  // };
 
   useEffect(() => {
     setHistory(JSON.parse(localStorage.getItem("q")));
@@ -93,10 +93,10 @@ const Search = () => {
             storedSearches.map((item) => (
               <div className="container" key={item.id}>
                 <p>{item.query}</p>
-                <LiaTimesSolid
+                {/* <LiaTimesSolid
                   className="icon"
                   onClick={() => removeItem(item.id)}
-                />
+                /> */}
               </div>
             ))}
         </div>
