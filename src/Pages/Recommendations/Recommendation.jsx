@@ -12,11 +12,12 @@ import { MenuRoute } from "../../Components/DummyFiles/MenuRoute";
 import { FaStar } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { BsCurrencyDollar } from "react-icons/bs";
-import { useNavigate } from "react-router-dom";
+import { ReactTitle } from "react-meta-tags";
 
 const Recommendation = () => {
   return (
     <div className="recommendation">
+      <ReactTitle title="Recommendations" />
       <div className="wrapper">
         <div className="hero">
           <div className="box">
