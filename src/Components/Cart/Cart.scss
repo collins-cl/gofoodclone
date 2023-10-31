@@ -221,6 +221,7 @@
     left: 0;
     height: 80%;
     width: 100%;
+    border: none;
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
 
@@ -259,6 +260,10 @@
 
     .notempty-mobile {
       padding: 1em;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
 
       .head {
         display: flex;
@@ -288,7 +293,7 @@
       }
 
       .content {
-        height: 50vh;
+        height: 55vh;
         overflow-y: scroll;
         display: flex;
         flex-direction: column;
@@ -335,7 +340,6 @@
       }
 
       .check-out {
-        margin-top: 2.5em;
         .tot-price {
           display: flex;
           justify-content: space-between;
