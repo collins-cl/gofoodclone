@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../SearchedData/SearchedData.scss";
 import { useParams, useSearchParams } from "react-router-dom";
-import { MenuRoute } from "../../../Components/DummyFiles/MenuRoute";
-import Image from "../../../../public/CuisinePng/bako.jpg";
 import { DataFiles } from "../../../Components/DummyFiles/DataFiles";
 
 const SearchedData = () => {
@@ -14,7 +12,9 @@ const SearchedData = () => {
 
   useEffect(() => {
     const filteredItems = menu.filter((item) => {
-      return item.foodCategory.split(" ")[0].toLowerCase() === param.toLowerCase();
+      return (
+        item.foodCategory.split(" ")[0].toLowerCase() === param.toLowerCase()
+      );
     });
 
     setData(filteredItems);
@@ -34,10 +34,7 @@ const SearchedData = () => {
             data.map((item) => (
               <div className="box" key={item.id}>
                 <div className="img">
-                  <img
-                    src={item.image}
-                    alt=""
-                  />
+                  <img src={item.image} alt="" />
                 </div>
 
                 <div className="name">

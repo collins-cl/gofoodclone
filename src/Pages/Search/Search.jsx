@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import "../Search/Search.scss";
 import { BsSearch } from "react-icons/bs";
 import { LiaTimesSolid } from "react-icons/lia";
-import { MenuRoute } from "../../Components/DummyFiles/MenuRoute";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { DataFiles } from "../../Components/DummyFiles/DataFiles";
 
@@ -13,19 +12,6 @@ const Search = () => {
   const [storedSearches, setHistory] = useState();
 
   const q = searchParams.get("q");
-
-  // const removeItem = (props) => {
-  //   if (storedSearches) {
-  //     // Define the item you want to remove (for example, based on its index)
-  //     const itemToRemove = props; // Change this to the index of the item you want to remove
-  //     const updatedSearches = storedSearches.filter(
-  //       (item) => item.id !== itemToRemove
-  //     );
-  //     localStorage.setItem("q", JSON.stringify(updatedSearches));
-  //   } else {
-  //     console.log("No search history found in localStorage");
-  //   }
-  // };
 
   useEffect(() => {
     setHistory(JSON.parse(localStorage.getItem("q")));

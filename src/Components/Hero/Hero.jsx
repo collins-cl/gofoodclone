@@ -11,6 +11,7 @@ import { useNavigate } from "react-router-dom";
 import Modal from "@mui/material/Modal";
 import "../Hero/customModal.css";
 import { LiaTimesSolid } from "react-icons/lia";
+import { DataFiles } from "../DummyFiles/DataFiles";
 
 const Hero = () => {
   const navigate = useNavigate();
@@ -24,26 +25,33 @@ const Hero = () => {
   };
 
   const handleCloseList = (props) => {
-    setQ(props.city);
+    setQ(props.state);
     setOpenList(false);
   };
 
   const handleLocationdb = (props) => {
-    setQ(props.city);
+    setQ(props.state);
     setOpen(false);
   };
 
   const filteredData = LocationDb.filter((el) => {
-    if (q === "") {
+    if (q.toLocaleLowerCase() === "") {
       return;
     } else {
-      return el.city.includes(q);
+      return el.state.toLocaleLowerCase().includes(q);
     }
   });
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigate(`/${q}/restaurants`);
+    let sliceQ = q.split(" ")[0];
+    const filteredDataFile = DataFiles.filter((el) => {
+      return el.location.toLocaleLowerCase().includes(q.toLocaleLowerCase());
+    });
+    if (filteredDataFile.length > 0) {
+      console.log("file exist");
+    }
+    console.log("file doesnt extst");
   };
 
   useEffect(() => {
@@ -94,7 +102,7 @@ const Hero = () => {
             <div className="location-list">
               {q <= 0 ? null : (
                 <div className="container">
-                  {q.length <= 0 ? (
+                  {q.length < 1 ? (
                     <div className="geo-location">
                       <p>Use your current location</p>
                       <MdOutlineMyLocation className="icon" />

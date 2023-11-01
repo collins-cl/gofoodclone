@@ -3,7 +3,6 @@ import "../Menu/Menu.scss";
 import { FaStar } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { BsCurrencyDollar } from "react-icons/bs";
-import { MenuRoute } from "../DummyFiles/MenuRoute";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { DataFiles } from "../DummyFiles/DataFiles";
@@ -11,18 +10,6 @@ import { Skeleton } from "@mui/material";
 
 const Menu = () => {
   const navigate = useNavigate();
-  function calculateColor(props) {
-    if (props >= 1 && props < 2) {
-      return "black";
-    } else if (props >= 2 && props < 3) {
-      return "black";
-    } else if (props >= 3 && [props] < 4) {
-      return "black";
-    } else {
-      return "gray";
-    }
-  }
-  const colorValue = MenuRoute.map((item, id) => calculateColor(item.price));
 
   return (
     <div className="menu">
@@ -48,7 +35,11 @@ const Menu = () => {
                   {item ? (
                     <img src={item.image} alt="" />
                   ) : (
-                    <Skeleton variant="rectangular" width="270px" height="230px" />
+                    <Skeleton
+                      variant="rectangular"
+                      width="270px"
+                      height="230px"
+                    />
                   )}
                   <div className="star">
                     <FaStar className="icon" />
@@ -70,7 +61,6 @@ const Menu = () => {
                     <div className="dot"></div>
 
                     <div className="price">
-                      <BsCurrencyDollar fill={colorValue} className="icon" />
                       <BsCurrencyDollar className="icon" />
                       <BsCurrencyDollar className="icon" />
                       <BsCurrencyDollar className="icon" />
