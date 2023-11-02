@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../Shop/Shop.scss";
-import Image from "../../assets/whyorderus/fourth.png";
-import { useSearchParams } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { DataFiles } from "../../Components/DummyFiles/DataFiles";
 
 const Shop = () => {
   const [searchParams, setSearchParams] = useSearchParams();
+  const navigate = useNavigate();
 
   const query = searchParams.get("q");
 
@@ -25,7 +25,11 @@ const Shop = () => {
           <div className="head">Here are your searches matched by query:</div>
 
           <div className="container">
-            <ContainerContent data={filteredData} query={query} />
+            <ContainerContent
+              data={filteredData}
+              query={query}
+              navigate={navigate}
+            />
           </div>
         </div>
       </div>
@@ -35,7 +39,7 @@ const Shop = () => {
 
 export default Shop;
 
-export const ContainerContent = ({ data, query }) => {
+export const ContainerContent = ({ data, query, navigate }) => {
   return data.map((item) => {
     //this checks if the items in the array matches the query provided by the URL validatory by location only
     if (item.location.toLocaleLowerCase() === query.toLocaleLowerCase()) {

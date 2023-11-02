@@ -10,6 +10,7 @@ import Recommendation from "./Pages/Recommendations/Recommendation";
 import SearchedData from "./Pages/Search/SearchedData/SearchedData";
 import { ErrorPage } from "./Pages/Error/ErrorPage";
 import Shop from "./Pages/Shop/Shop";
+import Login from "./Pages/LogIn/Login";
 
 function App() {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
@@ -37,6 +38,7 @@ function App() {
             <Route path="/recommendation" element={<Recommendation />}></Route>
             <Route path="/shop" element={<Shop />} />
             <Route path="/404" element={<ErrorPage />} />
+            <Route path="/login" element={<Login />} />
           </Routes>
 
           <Footer />

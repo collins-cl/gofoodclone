@@ -55,7 +55,7 @@ const Navbar = () => {
             <NavLink to="/404" onClick={closeNav}>
               Download on Appstore
             </NavLink>
-            <NavLink to="/404" onClick={closeNav}>
+            <NavLink to="/login" onClick={closeNav}>
               Log in
             </NavLink>
           </div>
