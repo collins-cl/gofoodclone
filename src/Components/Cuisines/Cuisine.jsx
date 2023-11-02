@@ -16,7 +16,7 @@ const Cuisine = () => {
           <div className="container">
             {CuisineRoute &&
               CuisineRoute.slice(0, itemstoshow).map((data, id) => (
-                <NavLink to={`/restaurant/${data.route}`} key={id}>
+                <NavLink to={`/404`} key={id}>
                   <div className="content">
                     <div className="image">
                       <img src={data.img} alt="" />

@@ -3,13 +3,17 @@ import "../Menu/Menu.scss";
 import { FaStar } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { BsCurrencyDollar } from "react-icons/bs";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { DataFiles } from "../DummyFiles/DataFiles";
 import { Skeleton } from "@mui/material";
 
 const Menu = () => {
   const navigate = useNavigate();
+
+  const navigateHandle = (props) => {
+    navigate(`/shop?q=${props}`);
+  };
 
   return (
     <div className="menu">
@@ -27,9 +31,13 @@ const Menu = () => {
               <div
                 className="content"
                 key={id}
-                onClick={() =>
-                  navigate(`/restaurants/near-me/${item.foodCategory}`)
-                }
+                onClick={() => {
+                  // setSearchParams(
+                  //   { q: item.foodCategory },
+                  //   { replace: "true" }
+                  // );
+                  navigateHandle(item.foodCategory);
+                }}
               >
                 <div className="img">
                   {item ? (

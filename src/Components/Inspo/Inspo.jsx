@@ -11,11 +11,7 @@ const Inspo = () => {
         <div className="box">
           {InspoRoutes &&
             InspoRoutes.map((data, id) => (
-              <NavLink
-                to={`/restaurants${data.route}`}
-                activeClassName="active"
-                key={id}
-              >
+              <NavLink to={"/404"} activeClassName="active" key={id}>
                 <div className="container">
                   <img width={100} key={id} src={data.img} alt="" />
 

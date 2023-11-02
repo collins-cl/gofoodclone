@@ -46,10 +46,18 @@ const Navbar = () => {
               Recommendations
             </NavLink>
 
-            <NavLink onClick={closeNav}>Privacy Policy</NavLink>
-            <NavLink onClick={closeNav}>Terms of service</NavLink>
-            <NavLink onClick={closeNav}>Download on Appstore</NavLink>
-            <NavLink onClick={closeNav}>Log in</NavLink>
+            <NavLink to="/404" onClick={closeNav}>
+              Privacy Policy
+            </NavLink>
+            <NavLink to="/404" onClick={closeNav}>
+              Terms of service
+            </NavLink>
+            <NavLink to="/404" onClick={closeNav}>
+              Download on Appstore
+            </NavLink>
+            <NavLink to="/404" onClick={closeNav}>
+              Log in
+            </NavLink>
           </div>
         </div>
 

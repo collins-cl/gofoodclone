@@ -7,7 +7,7 @@ import {
   MdOutlineMyLocation,
 } from "react-icons/md";
 import { LocationDb } from "../DummyFiles/Locationdb";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import Modal from "@mui/material/Modal";
 import "../Hero/customModal.css";
 import { LiaTimesSolid } from "react-icons/lia";
@@ -16,42 +16,76 @@ import { DataFiles } from "../DummyFiles/DataFiles";
 const Hero = () => {
   const navigate = useNavigate();
   const [q, setQ] = useState("");
+  const [searchParams, setSearchParams] = useSearchParams({ q: "" });
   const [open, setOpen] = useState(false);
   const [openlist, setOpenList] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  const query = searchParams.get("q");
 
   const handleClose = () => {
     setOpen(false);
   };
 
   const handleCloseList = (props) => {
-    setQ(props.state);
+    setSearchParams(
+      (prev) => {
+        prev.set("q", props.state);
+        return prev;
+      },
+      {
+        replace: "true",
+      }
+    );
     setOpenList(false);
   };
 
   const handleLocationdb = (props) => {
-    setQ(props.state);
+    setSearchParams(
+      (prev) => {
+        prev.set("q", props.state);
+        return prev;
+      },
+      {
+        replace: "true",
+      }
+    );
     setOpen(false);
   };
 
   const filteredData = LocationDb.filter((el) => {
-    if (q.toLocaleLowerCase() === "") {
+    if (query === "") {
       return;
     } else {
-      return el.state.toLocaleLowerCase().includes(q);
+      return el.state.toLocaleLowerCase().includes(query);
     }
   });
 
-  const handleSubmit = (e) => {
+  //handles searching of inputted query string and redirecting to matched location from db
+  const searchQuery = (e) => {
     e.preventDefault();
-    let sliceQ = q.split(" ")[0];
-    const filteredDataFile = DataFiles.filter((el) => {
-      return el.location.toLocaleLowerCase().includes(q.toLocaleLowerCase());
-    });
-    if (filteredDataFile.length > 0) {
-      console.log("file exist");
+    if (query === "") {
+      console.log("empty");
+    } else {
+      const filteredMenu = DataFiles.filter((el) => {
+        return el.location.toLowerCase().includes(query.toLowerCase());
+      });
+
+      if (filteredMenu.length > 0) {
+        const querystring = filteredMenu[0].location;
+        if (querystring.toLocaleLowerCase() === query.toLowerCase()) {
+          if (query.split(" ")[1]) {
+            navigate(`/shop?q=${query.split(" ")[0] + query.split(" ")[1]}`);
+          }else{
+            navigate(`/shop?q=${query.split(" ")[0]}`);
+          } 
+        } else {
+          navigate("/404");
+        }
+      } else {
+        navigate("/404");
+      }
     }
-    console.log("file doesnt extst");
   };
 
   useEffect(() => {
@@ -78,14 +112,24 @@ const Hero = () => {
 
         <div className="location">
           <p>Your Location</p>
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={searchQuery}>
             <div className="input">
               <MdLocationOn className="tag" />
               <input
                 type="text"
                 name="location"
-                value={q}
-                onChange={(e) => setQ(e.target.value)}
+                value={query}
+                onChange={(e) => {
+                  setSearchParams(
+                    (prev) => {
+                      prev.set("q", e.target.value);
+                      return prev;
+                    },
+                    {
+                      replace: "true",
+                    }
+                  );
+                }}
                 onClick={() => {
                   setOpen(true);
                   setOpenList(true);
@@ -100,9 +144,9 @@ const Hero = () => {
 
           {openlist && (
             <div className="location-list">
-              {q <= 0 ? null : (
+              {query <= 0 ? null : (
                 <div className="container">
-                  {q.length < 1 ? (
+                  {filteredData.length < 1 ? (
                     <div className="geo-location">
                       <p>Use your current location</p>
                       <MdOutlineMyLocation className="icon" />
@@ -158,8 +202,18 @@ const Hero = () => {
                         <input
                           type="text"
                           name="location"
-                          value={q}
-                          onChange={(e) => setQ(e.target.value)}
+                          value={query}
+                          onChange={(e) => {
+                            setSearchParams(
+                              (prev) => {
+                                prev.set("q", e.target.value);
+                                return prev;
+                              },
+                              {
+                                replace: "true",
+                              }
+                            );
+                          }}
                           onClick={() => setOpen(true)}
                           placeholder="Enter your location"
                         />

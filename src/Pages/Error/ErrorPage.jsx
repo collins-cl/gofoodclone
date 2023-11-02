@@ -13,7 +13,8 @@ export const ErrorPage = () => {
         <div className="head">Hmm, couldn't find what you're looking for</div>
 
         <div className="details">
-          Try searching these keywords [rice, cheese, chocolates] 😉
+          Try searching these keywords [rice, cheese, chocolates, Atlanta,
+          LosAngeles, New York] 😉
         </div>
       </div>
     </div>

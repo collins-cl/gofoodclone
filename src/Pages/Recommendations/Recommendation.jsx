@@ -1,6 +1,6 @@
 import React from "react";
 import "../Recommendations/Recommendation.scss";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import Nearme from "../../../public/InspoPng/nearme.png";
 import Bestsellers from "../../../public/InspoPng/bestsellers.png";
 import Healthy from "../../../public/InspoPng/healthy.png";
@@ -15,6 +15,12 @@ import { DataFiles } from "../../Components/DummyFiles/DataFiles";
 
 const Recommendation = () => {
   const navigate = useNavigate();
+  const [searchParams, setSearchParams] = useSearchParams({ q: "" });
+
+  const navigateHandle = (props) => {
+    navigate(`/shop?q=${props}`);
+  };
+
   return (
     <div className="recommendation">
       <div className="wrapper">
@@ -46,9 +52,9 @@ const Recommendation = () => {
                   <div
                     className="content"
                     key={id}
-                    onClick={() =>
-                      navigate(`/restaurants/bestsellers/${item.foodCategory}`)
-                    }
+                    onClick={() => {
+                      navigateHandle(item.foodCategory);
+                    }}
                   >
                     <div className="img">
                       <img src={item.image} alt="" />
@@ -100,9 +106,9 @@ const Recommendation = () => {
                   <div
                     className="content"
                     key={id}
-                    onClick={() =>
-                      navigate(`/restaurants/near-me/${item.foodCategory}`)
-                    }
+                    onClick={() => {
+                      navigateHandle(item.foodCategory);
+                    }}
                   >
                     <div className="img">
                       <img src={item.image} alt="" />
@@ -154,9 +160,9 @@ const Recommendation = () => {
                   <div
                     className="content"
                     key={id}
-                    onClick={() =>
-                      navigate(`/restaurants/near-me/${item.foodCategory}`)
-                    }
+                    onClick={() => {
+                      navigateHandle(item.foodCategory);
+                    }}
                   >
                     <div className="img">
                       <img src={item.image} alt="" />
@@ -208,9 +214,9 @@ const Recommendation = () => {
                   <div
                     className="content"
                     key={id}
-                    onClick={() =>
-                      navigate(`/restaurants/mostloved/${item.foodCategory}`)
-                    }
+                    onClick={() => {
+                      navigateHandle(item.foodCategory);
+                    }}
                   >
                     <div className="img">
                       <img src={item.image} alt="" />
@@ -262,9 +268,9 @@ const Recommendation = () => {
                   <div
                     className="content"
                     key={id}
-                    onClick={() =>
-                      navigate(`/restaurants/24hours/${item.foodCategory}`)
-                    }
+                    onClick={() => {
+                      navigateHandle(item.foodCategory);
+                    }}
                   >
                     <div className="img">
                       <img src={item.image} alt="" />
@@ -316,9 +322,9 @@ const Recommendation = () => {
                   <div
                     className="content"
                     key={id}
-                    onClick={() =>
-                      navigate(`/restaurants/promo/${item.foodCategory}`)
-                    }
+                    onClick={() => {
+                      navigateHandle(item.foodCategory);
+                    }}
                   >
                     <div className="img">
                       <img src={item.image} alt="" />
@@ -370,9 +376,9 @@ const Recommendation = () => {
                   <div
                     className="content"
                     key={id}
-                    onClick={() =>
-                      navigate(`/restaurants/near-me/${item.foodCategory}`)
-                    }
+                    onClick={() => {
+                      navigateHandle(item.foodCategory);
+                    }}
                   >
                     <div className="img">
                       <img src={item.image} alt="" />
