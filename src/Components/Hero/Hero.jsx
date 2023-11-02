@@ -76,9 +76,9 @@ const Hero = () => {
         if (querystring.toLocaleLowerCase() === query.toLowerCase()) {
           if (query.split(" ")[1]) {
             navigate(`/shop?q=${query.split(" ")[0] + query.split(" ")[1]}`);
-          }else{
+          } else {
             navigate(`/shop?q=${query.split(" ")[0]}`);
-          } 
+          }
         } else {
           navigate("/404");
         }

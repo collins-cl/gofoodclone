@@ -9,6 +9,7 @@ import Search from "./Pages/Search/Search";
 import Recommendation from "./Pages/Recommendations/Recommendation";
 import SearchedData from "./Pages/Search/SearchedData/SearchedData";
 import { ErrorPage } from "./Pages/Error/ErrorPage";
+import Shop from "./Pages/Shop/Shop";
 
 function App() {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
@@ -34,6 +35,7 @@ function App() {
             <Route path="/search" element={<Search />}></Route>
             <Route path="/search-result" element={<SearchedData />} />
             <Route path="/recommendation" element={<Recommendation />}></Route>
+            <Route path="/shop" element={<Shop />} />
             <Route path="/404" element={<ErrorPage />} />
           </Routes>
 

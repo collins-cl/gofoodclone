@@ -18,8 +18,6 @@ const SearchedData = () => {
     });
 
     setData(filteredItems);
-
-    console.log(filteredItems);
   }, []);
 
   return (
