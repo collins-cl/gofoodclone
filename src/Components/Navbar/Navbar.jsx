@@ -11,6 +11,7 @@ import Cart from "../Cart/Cart";
 const Navbar = () => {
   const location = useLocation();
   const hiddenPaths = ["/search", "/search-result"];
+  const hiddenPaths2 = ["/login"];
 
   const [open, setOpen] = useState(false);
 
@@ -55,9 +56,12 @@ const Navbar = () => {
             <NavLink to="/404" onClick={closeNav}>
               Download on Appstore
             </NavLink>
-            <NavLink to="/login" onClick={closeNav}>
-              Log in
-            </NavLink>
+
+            {hiddenPaths2.includes(location.pathname) ? null : (
+              <NavLink to="/login" onClick={closeNav}>
+                Log in
+              </NavLink>
+            )}
           </div>
         </div>
 
@@ -68,9 +72,11 @@ const Navbar = () => {
             </Link>
           )}
 
-          <div className="log-in">
-            <Link>Log In</Link>
-          </div>
+          {hiddenPaths2.includes(location.pathname) ? null : (
+            <div className="log-in">
+              <Link to="/login">Log In</Link>
+            </div>
+          )}
 
           <Cart />
         </div>
