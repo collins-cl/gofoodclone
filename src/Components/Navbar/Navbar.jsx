@@ -18,6 +18,7 @@ const Navbar = () => {
   const openNav = () => setOpen(true);
   const closeNav = () => setOpen(false);
 
+
   return (
     <div className="navbar">
       <div className="wrapper">

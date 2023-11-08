@@ -3,6 +3,7 @@ import "../Cart/Cart.scss";
 import { BsFillCartFill } from "react-icons/bs";
 import { FaPlus } from "react-icons/fa";
 import { Modal } from "@mui/material";
+import { cartStore } from "../../store/Cart";
 
 const Cart = () => {
   const ref = useRef();
@@ -30,14 +31,21 @@ const Cart = () => {
     };
   });
 
+  const { cart, totalPrice, totalItem, increaseProduct, reduceProduct } =
+    cartStore((state) => state);
+
+  const total = totalPrice.toFixed(2);
+
   return (
     <div className="cart">
       <BsFillCartFill className="icon" onClick={() => setIsOpen(true)} />
-      <div className="cart-count">3</div>
+      <div className="cart-count">
+        <p>{totalItem}</p>
+      </div>
       {!isMobile ? (
         isopen ? (
           <div className="cart-bucket-desktop" ref={ref}>
-            {isempty ? (
+            {cart.length < 1 ? (
               <div className="isempty">
                 <div className="head">Your order</div>
 
@@ -67,24 +75,37 @@ const Cart = () => {
                 </div>
 
                 <div className="content">
-                  <div className="item">
-                    <div className="title">Mayonaise deez nuts</div>
+                  {cart &&
+                    cart.map((item) => (
+                      <div className="item" key={item.id}>
+                        <div className="title">{item.foodName}</div>
 
-                    <div className="amount">
-                      <div className="sum">+</div>
-                      <div className="value">2</div>
-                      <div className="sum">-</div>
-                    </div>
+                        <div className="amount">
+                          <div
+                            className="sum"
+                            onClick={() => increaseProduct(item)}
+                          >
+                            +
+                          </div>
+                          <div className="value">{item.quantity}</div>
+                          <div
+                            className="sum"
+                            onClick={() => reduceProduct(item)}
+                          >
+                            -
+                          </div>
+                        </div>
 
-                    <div className="price">$10</div>
-                  </div>
+                        <div className="price">{item.price}</div>
+                      </div>
+                    ))}
                 </div>
 
                 <div className="check-out">
                   <div className="tot-price">
                     <p>Total price</p>
 
-                    <div className="tot-sum">$123.08</div>
+                    <div className="tot-sum">${total}</div>
                   </div>
 
                   <div className="checkout">Checkout</div>
@@ -100,7 +121,7 @@ const Cart = () => {
           sx={{ background: "rgba(85, 83, 83, 0.576)" }}
         >
           <div className="cart-bucket-mobile">
-            {isempty ? (
+            {cart.length < 1 ? (
               <div className="isempty-mobile">
                 <div className="head">Your order</div>
 
@@ -130,24 +151,37 @@ const Cart = () => {
                 </div>
 
                 <div className="content">
-                  <div className="item">
-                    <div className="title">Mayonaise deez nuts</div>
+                  {cart &&
+                    cart.map((item) => (
+                      <div className="item" key={item.id}>
+                        <div className="title">{item.foodName}</div>
 
-                    <div className="amount">
-                      <div className="sum">+</div>
-                      <div className="value">2</div>
-                      <div className="sum">-</div>
-                    </div>
+                        <div className="amount">
+                          <div
+                            className="sum"
+                            onClick={() => increaseProduct(item)}
+                          >
+                            +
+                          </div>
+                          <div className="value">{item.quantity}</div>
+                          <div
+                            className="sum"
+                            onClick={() => reduceProduct(item)}
+                          >
+                            -
+                          </div>
+                        </div>
 
-                    <div className="price">$10</div>
-                  </div>
+                        <div className="price">${item.price}</div>
+                      </div>
+                    ))}
                 </div>
 
                 <div className="check-out">
                   <div className="tot-price">
                     <p>Total price</p>
 
-                    <div className="tot-sum">$123.08</div>
+                    <div className="tot-sum">${total}</div>
                   </div>
 
                   <div className="checkout">Checkout</div>

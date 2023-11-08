@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "../LogIn/Login.scss";
 import Image from "../../assets/whyorderus/fourth.png";
 import Success from "../../assets/whyorderus/third.png";
 import { FaGoogle } from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { loginSchema, registrationSchema } from "../../lib/Schema";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -56,6 +59,17 @@ const PageDisplay = ({ page, setPage, navigate }) => {
       </div>
     );
   } else if (page === "login") {
+    const schema = loginSchema;
+
+    const {
+      register,
+      handleSubmit,
+      formState: { errors },
+    } = useForm({ resolver: yupResolver(schema) });
+
+    const onSubmit = (data) => {
+      console.log(data);
+    };
     return (
       <div className="login-screen">
         <div className="head">
@@ -66,20 +80,42 @@ const PageDisplay = ({ page, setPage, navigate }) => {
           </div>
         </div>
 
-        <form onSubmit={(e) => e.preventDefault()}>
+        <form onSubmit={handleSubmit(onSubmit)}>
           <div className="email">
             <label htmlFor="email">Email</label>
-            <input type="email" placeholder="user@email.com" required />
+            <input
+              id="email"
+              type="email"
+              placeholder="user@email.com"
+              autoComplete="true"
+              {...register("email", { required: true })}
+            />
+
+            {errors.email && (
+              <div className="warning">{errors.email?.message}</div>
+            )}
           </div>
 
           <div className="password">
             <label htmlFor="password">Password</label>
-            <input type="text" placeholder="password" required />
+            <input
+              type="text"
+              placeholder="password"
+              id="password"
+              autoComplete="true"
+              {...register("password", { required: true })}
+            />
+
+            {errors.password && (
+              <div className="warning">
+                Password must contain a Capital letter, <br />
+                A small letter <br />
+                And a number
+              </div>
+            )}
           </div>
 
-          <button type="submit" onClick={() => setPage("login-success")}>
-            Log in
-          </button>
+          <button type="submit">Log in</button>
         </form>
 
         <div className="google-auth">
@@ -102,6 +138,18 @@ const PageDisplay = ({ page, setPage, navigate }) => {
       </div>
     );
   } else if (page === "register") {
+    const schema = registrationSchema;
+
+    const {
+      handleSubmit,
+      formState: { errors },
+      register,
+    } = useForm({ resolver: yupResolver(schema) });
+
+    const onSubmit = (data) => {
+      console.log(data);
+    };
+
     return (
       <div className="register-page">
         <div className="head">
@@ -116,32 +164,66 @@ const PageDisplay = ({ page, setPage, navigate }) => {
           Register an account with GoFood and make your deliveries count!.
         </h3>
 
-        <form onSubmit={(e) => e.preventDefault()}>
+        <form onSubmit={handleSubmit(onSubmit)}>
           <div className="names">
             <div className="f-name">
               <label htmlFor="f-name">First name</label>
-              <input type="text" name="firstname" placeholder="john" />
+              <input
+                type="text"
+                name="firstname"
+                {...register("firstName", { required: "true" })}
+                placeholder="john"
+              />
+
+              {errors.firstName && (
+                <div className="warning">{errors.firstName?.message}</div>
+              )}
             </div>
 
             <div className="l-name">
               <label htmlFor="l-name">Last name</label>
-              <input type="text" name="firstname" placeholder="doe" />
+              <input
+                type="text"
+                name="firstname"
+                placeholder="doe"
+                {...register("lastName", { required: "true" })}
+              />
+
+              {errors.lastName && (
+                <div className="warning">{errors.lastName?.message}</div>
+              )}
             </div>
           </div>
 
           <div className="email">
             <label htmlFor="email">Email</label>
-            <input type="email" name="email" placeholder="john.doe@gmail.com" />
+            <input
+              type="email"
+              name="email"
+              placeholder="john.doe@gmail.com"
+              {...register("email", { required: "true" })}
+            />
+
+            {errors.email && (
+              <div className="warning">{errors.email?.message}</div>
+            )}
           </div>
 
           <div className="password">
             <label htmlFor="password">Password</label>
-            <input type="text" name="password" placeholder="*******" />
+            <input
+              type="text"
+              name="password"
+              placeholder="*******"
+              {...register("password", { required: "true" })}
+            />
+
+            {errors.password && (
+              <div className="warning">{errors.password?.message}</div>
+            )}
           </div>
 
-          <button type="submit" onClick={() => setPage("login")}>
-            Sign me up!
-          </button>
+          <button type="submit">Sign me up!</button>
         </form>
 
         <div className="span">

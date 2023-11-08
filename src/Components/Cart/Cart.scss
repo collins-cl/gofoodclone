@@ -29,6 +29,10 @@
     align-items: center;
     top: -3px;
     right: 0;
+
+    p {
+      margin-top: 2px;
+    }
   }
 
   .cart-bucket-desktop {
@@ -41,6 +45,7 @@
     border-radius: 10px;
     background-color: white;
     padding: 1.5em;
+    box-shadow: -1px 6px 21px -2px rgba(0, 0, 0, 0.17);
 
     .isempty {
       .head {
@@ -116,12 +121,14 @@
 
           .title {
             font-size: 14px;
+            width: 55%;
           }
 
           .amount {
             display: flex;
             align-items: center;
             gap: 1em;
+            width: 35%;
 
             .sum {
               height: 25px;
@@ -140,6 +147,7 @@
           }
 
           .price {
+            width: 10%;
             font-size: 14px;
           }
         }
