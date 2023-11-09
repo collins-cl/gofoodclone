@@ -14,6 +14,8 @@ const Checkout = () => {
   let shippingFee = shipping.toFixed(2);
   let totalFee = parseFloat(totalPriceApp) + parseFloat(shippingFee);
 
+  let total = totalFee.toFixed(2);
+
   return (
     <div className="checkout">
       <div className="wrapper">
@@ -44,7 +46,7 @@ const Checkout = () => {
                 </div>
 
                 <div className="total">
-                  <p>Total</p> <h3>${totalFee}</h3>
+                  <p>Total</p> <h3>${total}</h3>
                 </div>
               </div>
 
