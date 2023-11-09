@@ -30,3 +30,25 @@ export const registrationSchema = yup.object().shape({
     )
     .required("Please enter your password"),
 });
+
+export const checkoutSchema = yup.object().shape({
+  name: yup.string().required("must input name").min(3, "name too short"),
+
+  address: yup
+    .string()
+    .required("address required")
+    .min(5, "address too short"),
+
+  landmark: yup.string().required("landmark required"),
+
+  city: yup.string().required("field required for deluvery bus stop"),
+
+  email: yup.string().required("email is required").email("must be an email"),
+
+  mobile: yup
+    .number()
+    .required("number input required")
+    .typeError("must be a number")
+    .min(10, "can't be less than 10")
+    .max(15, "can't be greater than 12"),
+});

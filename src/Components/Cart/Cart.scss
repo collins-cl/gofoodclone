@@ -318,12 +318,14 @@
 
           .title {
             font-size: 14px;
+            width: 55%;
           }
 
           .amount {
             display: flex;
             align-items: center;
             gap: 1em;
+            width: 35%;
 
             .sum {
               height: 25px;
@@ -342,6 +344,7 @@
           }
 
           .price {
+            width: 10%;
             font-size: 14px;
           }
         }

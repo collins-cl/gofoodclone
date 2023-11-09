@@ -11,6 +11,7 @@ import SearchedData from "./Pages/Search/SearchedData/SearchedData";
 import { ErrorPage } from "./Pages/Error/ErrorPage";
 import Shop from "./Pages/Shop/Shop";
 import Login from "./Pages/LogIn/Login";
+import Checkout from "./Pages/Checkout/Checkout";
 
 function App() {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
@@ -33,12 +34,13 @@ function App() {
 
           <Routes>
             <Route path="/" exact element={<Home />} />
-            <Route path="/search" element={<Search />}></Route>
-            <Route path="/search-result" element={<SearchedData />} />
             <Route path="/recommendation" element={<Recommendation />}></Route>
             <Route path="/shop" element={<Shop />} />
+            <Route path="/search" element={<Search />}></Route>
+            <Route path="/search-result" element={<SearchedData />} />
             <Route path="/404" element={<ErrorPage />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/checkout" element={<Checkout />} />
           </Routes>
 
           <Footer />
