@@ -222,9 +222,23 @@
                   justify-content: space-between;
                   gap: 1em;
                 }
+                label {
+                  font-size: 14px;
+                }
+
+                input {
+                  height: 45px;
+                  font-size: 16px;
+                }
 
                 button {
                   width: 70%;
+                  height: 45px;
+
+                }
+
+                .contact {
+                  flex-direction: column;
                 }
               }
             }

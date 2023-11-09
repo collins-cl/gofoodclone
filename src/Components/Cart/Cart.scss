@@ -318,14 +318,15 @@
 
           .title {
             font-size: 14px;
-            width: 55%;
+            width: 50%;
           }
 
           .amount {
             display: flex;
+            justify-content: space-between;
             align-items: center;
             gap: 1em;
-            width: 35%;
+            width: 30%;
 
             .sum {
               height: 25px;
