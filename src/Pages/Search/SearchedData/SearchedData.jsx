@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "../SearchedData/SearchedData.scss";
-import { useParams, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import { DataFiles } from "../../../Components/DummyFiles/DataFiles";
+import { cartStore } from "../../../store/Cart";
 
 const SearchedData = () => {
   const menu = DataFiles;
@@ -19,6 +20,8 @@ const SearchedData = () => {
 
     setData(filteredItems);
   }, []);
+
+  const { addToCart } = cartStore((state) => state);
 
   return (
     <div className="s-data-searched">
@@ -45,7 +48,9 @@ const SearchedData = () => {
                   <div className="price">{item.price} USD</div>
                 </div>
 
-                <div className="add">Add to cart</div>
+                <div className="add" onClick={() => addToCart(item)}>
+                  Add to cart
+                </div>
               </div>
             ))}
         </div>

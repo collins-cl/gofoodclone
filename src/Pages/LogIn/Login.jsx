@@ -69,6 +69,7 @@ const PageDisplay = ({ page, setPage, navigate }) => {
 
     const onSubmit = (data) => {
       console.log(data);
+      navigate(-1);
     };
     return (
       <div className="login-screen">
@@ -126,7 +127,7 @@ const PageDisplay = ({ page, setPage, navigate }) => {
     );
   } else if (page === "login-success") {
     setTimeout(() => {
-      navigate("/");
+      navigate(-1);
     }, 2000);
     return (
       <div className="success">
@@ -148,6 +149,7 @@ const PageDisplay = ({ page, setPage, navigate }) => {
 
     const onSubmit = (data) => {
       console.log(data);
+      navigate(-1);
     };
 
     return (

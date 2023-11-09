@@ -49,6 +49,5 @@ export const checkoutSchema = yup.object().shape({
     .number()
     .required("number input required")
     .typeError("must be a number")
-    .min(10, "can't be less than 10")
-    .max(15, "can't be greater than 12"),
+    .min(10, "can't be less than 10"),
 });

@@ -140,7 +140,7 @@
 
           .item-list {
             margin-top: 2em;
-            height: 450px;
+            height: 300px;
             overflow-y: auto;
             display: flex;
             flex-direction: column;
@@ -249,6 +249,63 @@
 
               .box {
                 width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .checkout {
+    margin-top: 2em;
+    .wrapper {
+      max-width: 90%;
+      margin: auto;
+
+      .head {
+        font-size: 1.1em;
+      }
+
+      .container {
+        display: flex;
+        justify-content: space-between;
+        gap: 2em;
+
+        .delivery-details {
+          width: 50%;
+
+          .delivery-cont {
+            .info-section {
+              form {
+                .contact {
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: space-between;
+                  gap: 10px;
+                }
+              }
+            }
+          }
+        }
+
+        .cart-contents {
+          width: 50%;
+
+          .contents {
+            .item-list {
+              margin-top: 2em;
+              height: 350px;
+
+              .box {
+                width: 100%;
+
+                .img {
+                  width: 70px;
+                  height: 70px;
+                }
               }
             }
           }

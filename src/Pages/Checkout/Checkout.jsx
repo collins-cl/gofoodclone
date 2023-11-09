@@ -54,8 +54,8 @@ const Checkout = () => {
 
               <div className="item-list">
                 {cart &&
-                  cart.map((product) => (
-                    <div className="box">
+                  cart.map((product, id) => (
+                    <div className="box" key={id}>
                       <div className="img">
                         <img src={product.image} alt="" />
                       </div>
@@ -93,6 +93,7 @@ const DeliveryDetails = ({ section, setSection }) => {
 
     const onSubmit = (data) => {
       console.log(data);
+      setSection("validated");
     };
 
     return (
@@ -100,7 +101,12 @@ const DeliveryDetails = ({ section, setSection }) => {
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="name">
             <label htmlFor="name">Name</label>
-            <input type="text" placeholder="Full name" {...register("name")} />
+            <input
+              type="text"
+              placeholder="Full name"
+              {...register("name")}
+              id="name"
+            />
             {errors.name && (
               <div className="warning">{errors.name?.message}</div>
             )}
@@ -112,6 +118,7 @@ const DeliveryDetails = ({ section, setSection }) => {
               type="text"
               placeholder="No 1, john doe street"
               {...register("address")}
+              id="address"
             />
 
             {errors.address && (
@@ -125,6 +132,7 @@ const DeliveryDetails = ({ section, setSection }) => {
               type="text"
               placeholder="Landmark"
               {...register("landmark")}
+              id="landmark"
             />
 
             {errors.landmark && (
@@ -134,7 +142,12 @@ const DeliveryDetails = ({ section, setSection }) => {
 
           <div className="city">
             <label htmlFor="name">City</label>
-            <input type="text" placeholder="City" {...register("city")} />
+            <input
+              type="text"
+              placeholder="City"
+              {...register("city")}
+              id="city"
+            />
             {errors.city && (
               <div className="warning">{errors.city?.message}</div>
             )}
@@ -143,7 +156,12 @@ const DeliveryDetails = ({ section, setSection }) => {
           <div className="contact">
             <div className="email">
               <label htmlFor="email">Email</label>
-              <input type="email" placeholder="Email" {...register("email")} />
+              <input
+                type="email"
+                placeholder="Email"
+                {...register("email")}
+                id="email"
+              />
 
               {errors.email && (
                 <div className="warning">{errors.email?.message}</div>
@@ -156,6 +174,7 @@ const DeliveryDetails = ({ section, setSection }) => {
                 type="text"
                 placeholder="0000000 000"
                 {...register("mobile")}
+                id="mobile"
               />
 
               {errors.mobile && (

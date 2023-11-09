@@ -4,12 +4,13 @@ import { BsFillCartFill } from "react-icons/bs";
 import { FaPlus } from "react-icons/fa";
 import { Modal } from "@mui/material";
 import { cartStore } from "../../store/Cart";
+import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
   const ref = useRef();
+  const navigate = useNavigate();
 
   const [isopen, setIsOpen] = useState(false);
-  const [isempty, setIsEmpty] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   const handleClickOutside = (e) => {
@@ -29,7 +30,7 @@ const Cart = () => {
 
       window.removeEventListener("resize", handleResize);
     };
-  });
+  }, []);
 
   const { cart, totalPrice, totalItem, increaseProduct, reduceProduct } =
     cartStore((state) => state);
@@ -108,7 +109,12 @@ const Cart = () => {
                     <div className="tot-sum">${total}</div>
                   </div>
 
-                  <div className="checkout">Checkout</div>
+                  <div
+                    className="checkout-bar"
+                    onClick={() => navigate("/checkout")}
+                  >
+                    Checkout
+                  </div>
                 </div>
               </div>
             )}
@@ -184,7 +190,12 @@ const Cart = () => {
                     <div className="tot-sum">${total}</div>
                   </div>
 
-                  <div className="checkout">Checkout</div>
+                  <div
+                    className="checkout"
+                    onClick={() => navigate("/checkout")}
+                  >
+                    Checkout
+                  </div>
                 </div>
               </div>
             )}

@@ -18,7 +18,6 @@ const Navbar = () => {
   const openNav = () => setOpen(true);
   const closeNav = () => setOpen(false);
 
-
   return (
     <div className="navbar">
       <div className="wrapper">
@@ -35,7 +34,7 @@ const Navbar = () => {
             <LiaTimesSolid className="close-menu" onClick={closeNav} />
             <img src={Logo} alt="" />
 
-            <NavLink exact activeClassName="active" to="/" onClick={closeNav}>
+            <NavLink activeClassName="active" to="/" onClick={closeNav}>
               Home
             </NavLink>
 
@@ -79,7 +78,7 @@ const Navbar = () => {
             </div>
           )}
 
-          <Cart />
+          {location.pathname === "/checkout" ? null : <Cart />}
         </div>
       </div>
     </div>
