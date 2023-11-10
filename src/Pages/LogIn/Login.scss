@@ -287,15 +287,74 @@
     height: 100vh;
 
     .wrapper {
-      position: absolute;
-      left: 50%;
-      top: 40%;
-      transform: translate(-50%, -50%);
+      position: unset;
+      left: 0;
+      top: 0;
+      transform: none;
       display: flex;
       flex-direction: column;
-      width: 95%;
+      width: 100%;
       height: fit-content;
-      padding: 2em 1em;
+      margin-top: 1em;
+      padding: 2em 2em;
+      box-shadow: none;
+
+      .login-screen {
+        form {
+          margin-top: 2em;
+
+          label {
+            font-size: 15px;
+          }
+
+          input {
+            height: 45px;
+          }
+
+          button {
+            width: 100%;
+            height: 45px;
+          }
+        }
+
+        .google-auth {
+          width: 100%;
+          height: 45px;
+        }
+      }
+
+      .register-page {
+        h3 {
+          margin-top: 15px;
+        }
+
+        form {
+          label {
+            font-size: 14px;
+            font-weight: bold;
+          }
+
+          input {
+            width: 100%;
+            height: 45px;
+          }
+
+          .names {
+            display: flex;
+            flex-direction: column;
+          }
+
+          button {
+            width: 100%;
+            height: 45px;
+          }
+        }
+      }
+
+      .google-auth {
+        width: 100%;
+        height: 45px;
+      }
     }
   }
 }

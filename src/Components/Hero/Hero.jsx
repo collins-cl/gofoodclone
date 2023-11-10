@@ -57,7 +57,7 @@ const Hero = () => {
     if (query === "") {
       return;
     } else {
-      return el.state.toLocaleLowerCase().includes(query);
+      return el.state.toLowerCase().includes(query.toLocaleLowerCase());
     }
   });
 
@@ -73,7 +73,7 @@ const Hero = () => {
 
       if (filteredMenu.length > 0) {
         const querystring = filteredMenu[0].location;
-        if (querystring.toLocaleLowerCase() === query.toLowerCase()) {
+        if (querystring.toLowerCase() === query.toLowerCase()) {
           if (query.split(" ")[1]) {
             navigate(`/shop?q=${query.split(" ")[0] + query.split(" ")[1]}`);
           } else {
